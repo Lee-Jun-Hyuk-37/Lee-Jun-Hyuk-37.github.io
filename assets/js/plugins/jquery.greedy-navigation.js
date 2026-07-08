@@ -11,52 +11,64 @@ var $vlinks = $('#site-nav .visible-links');
 var $vlinks_persist_tail = $vlinks.children("*.persist.tail");
 var $hlinks = $('#site-nav .hidden-links');
 
-var breaks = [];
+// Space reserved for the dropdown button, measured while it is still visible;
+// jQuery cannot reliably measure it once it gets display: none.
+var btnReservedSpace = ($btn.outerWidth() || 36) + 30;
 
+// Sum of the children widths, excluding margins. The list is a flex container
+// spanning the full nav width, so measuring the list itself always returns
+// the container width; auto margins (used to right-align links) must also be
+// excluded from the measurement.
+function visibleLinksWidth() {
+  var total = 0;
+  $vlinks.children().each(function () {
+    total += $(this).outerWidth();
+  });
+  return total;
+}
+
+function restoreAllLinks() {
+  while ($hlinks.children().length > 0) {
+    if ($vlinks_persist_tail.length > 0) {
+      $hlinks.children().first().insertBefore($vlinks_persist_tail);
+    } else {
+      $hlinks.children().first().appendTo($vlinks);
+    }
+  }
+}
+
+// Stateless recalculation: restore everything, then collapse items until the
+// list fits. Recomputing from scratch keeps the nav self-healing even if an
+// earlier run measured the layout before the stylesheet was applied.
 function updateNav() {
 
-  var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
+  restoreAllLinks();
+
+  var hiddenCount = 0;
 
   // The visible list is overflowing the nav
-  if ($vlinks.width() > availableSpace) {
+  if (visibleLinksWidth() > $nav.width()) {
+    var reducedSpace = $nav.width() - btnReservedSpace;
 
-    while ($vlinks.width() > availableSpace && $vlinks.children("*:not(.persist)").length > 0) {
-      // Record the width of the list
-      breaks.push($vlinks.width());
-
+    while (visibleLinksWidth() > reducedSpace && $vlinks.children("*:not(.persist)").length > 0) {
       // Move item to the hidden list
       $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
-
-      availableSpace = $btn.hasClass("hidden") ? $nav.width() : $nav.width() - $btn.width() - 30;
-
-      // Show the dropdown btn
-      $btn.removeClass("hidden");
-    }
-
-    // The visible list is not overflowing
-  } else {
-
-    // There is space for another item in the nav
-    while (breaks.length > 0 && availableSpace > breaks[breaks.length - 1]) {
-      // Move the item to the visible list
-      if ($vlinks_persist_tail.children().length > 0) {
-        $hlinks.children().first().insertBefore($vlinks_persist_tail);
-      } else {
-        $hlinks.children().first().appendTo($vlinks);
-      }
-      breaks.pop();
-    }
-
-    // Hide the dropdown btn if hidden list is empty
-    if (breaks.length < 1) {
-      $btn.addClass('hidden');
-      $btn.removeClass('close');
-      $hlinks.addClass('hidden');
+      hiddenCount++;
     }
   }
 
+  if (hiddenCount > 0) {
+    // Show the dropdown btn
+    $btn.removeClass('hidden');
+  } else {
+    // Hide the dropdown btn if hidden list is empty
+    $btn.addClass('hidden');
+    $btn.removeClass('close');
+    $hlinks.addClass('hidden');
+  }
+
   // Keep counter updated
-  $btn.attr("count", breaks.length);
+  $btn.attr("count", hiddenCount);
 
   // update masthead height and the body/sidebar top padding
   var mastheadHeight = $('.masthead').height();
@@ -75,6 +87,12 @@ $(window).on('resize', function () {
   updateNav();
 });
 screen.orientation.addEventListener("change", function () {
+  updateNav();
+});
+
+// Run again once stylesheets and fonts are loaded, since widths measured
+// before that are unreliable.
+$(window).on('load', function () {
   updateNav();
 });
 

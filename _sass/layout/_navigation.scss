@@ -203,15 +203,19 @@
   }
 
   .visible-links {
-    display: table;
+    display: flex;
+    align-items: center;
 
     li {
-      display: table-cell;
-      vertical-align: middle;
+      display: block;
+      // keep natural width so the greedy-nav script can detect overflow
+      flex-shrink: 0;
 
       &:first-child {
         font-weight: bold;
         text-wrap: wrap;
+        // push the site title left and the menu links to the right
+        margin-right: auto;
 
         a {
           margin-left: 0;
