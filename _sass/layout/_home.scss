@@ -140,72 +140,66 @@
     gap: 1.25em;
   }
 
-  /* Horizontal card: thumbnail on the left, text on the right */
+  /* Horizontal card: small thumbnail on the left, text on the right */
   &__card {
     display: flex;
-    flex-direction: row;
-    overflow: hidden;
+    gap: 0.9em;
+    padding: 0.9em;
     border: 1px solid var(--global-border-color);
     border-radius: $border-radius;
     background: var(--global-bg-color);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    }
   }
 
   &__card-thumb {
     display: block;
     flex-shrink: 0;
     width: 120px;
-    align-self: stretch;   // fill the full card height
-    object-fit: cover;
-    background: var(--global-border-color);
+    height: auto;            // keep the image ratio; the whole picture stays visible
+    align-self: flex-start;  // sit at the top, do not stretch to card height
+    object-fit: contain;
   }
 
+  // Descendant selectors here (e.g. .home__card-body .home__card-meta) raise
+  // specificity to (0,2,0) so they win over the theme's `.page__content p`
+  // rule, which otherwise forces a large paragraph margin.
   &__card-body {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    min-width: 0;          // allow long titles to wrap instead of overflowing
-    padding: 1em 1.25em;
-  }
+    min-width: 0;            // allow long titles to wrap instead of overflowing
 
-  &__card-meta {
-    margin: 0 0 0.4em;
-    color: var(--global-text-color-light);
-    font-family: $sans-serif;
-    font-size: $type-size-7;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
+    .home__card-title {
+      margin: 0 0 0.3em;
+      font-family: $sans-serif;
+      font-size: $type-size-6;
+      font-weight: 700;
+      line-height: 1.35;
+    }
 
-  &__card-title {
-    margin: 0 0 0.5em;
-    font-family: $sans-serif;
-    font-size: $type-size-5;
-    font-weight: 700;
-    line-height: 1.35;
-  }
+    .home__card-meta {
+      margin: 0 0 0.3em;
+      color: var(--global-text-color);
+      font-family: $sans-serif;
+      font-size: $type-size-7;
+      line-height: 1.4;
+    }
 
-  &__card-note {
-    margin: 0 0 1em;
-    color: var(--global-text-color-light);
-    font-size: $type-size-6;
-    line-height: 1.5;
-  }
+    .home__card-note {
+      margin: 0 0 0.5em;
+      color: var(--global-text-color);
+      font-size: $type-size-7;
+      line-height: 1.5;
+    }
 
-  &__card-link {
-    margin-top: auto;
-    font-family: $sans-serif;
-    font-size: $type-size-6;
-    font-weight: 700;
-    text-decoration: none;
+    .home__card-link {
+      font-family: $sans-serif;
+      font-size: $type-size-7;
+      font-weight: 700;
+      text-decoration: none;
 
-    &::after {
-      content: " \2192";
+      &::after {
+        content: " \2192";
+      }
     }
   }
 
@@ -227,24 +221,8 @@
     background: var(--global-bg-color);
   }
 
-  &__skill-head {
-    display: flex;
-    align-items: center;
-    gap: 0.75em;
-    margin-bottom: 0.75em;
-  }
-
-  &__skill-logo {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    object-fit: contain;
-    border-radius: $border-radius;
-    background: var(--global-border-color);
-  }
-
   &__skill-title {
-    margin: 0;
+    margin: 0 0 0.6em;
     font-family: $sans-serif;
     font-size: $type-size-4;
     font-weight: 700;
@@ -253,7 +231,7 @@
   &__skill-body {
     margin: 0;
     padding-left: 1.1em;
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     font-size: $type-size-6;
     line-height: 1.6;
 
