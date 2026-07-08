@@ -26,109 +26,96 @@ redirect_from:
     </div>
   </div>
 
-  <!-- ================= RESEARCH VISION ================= -->
+  <!-- ================= ABOUT / RESEARCH GOAL ================= -->
   <section class="home__section">
-    <h2 class="home__section-title">Research Vision</h2>
-    <p class="home__section-lead">I build computational models of how humans control movement &mdash; a <em>digital clone of the human motor controller</em> &mdash; to understand it scientifically and put it to work in the real world.</p>
-
-    <div class="home__pillars">
-      <div class="home__pillar">
-        <span class="home__pillar-tag">Goal</span>
-        <h3 class="home__pillar-title">Digital Clone</h3>
-        <p class="home__pillar-text">Recreate the human motor controller as a computational model that reproduces how people actually move.</p>
-      </div>
-      <div class="home__pillar">
-        <span class="home__pillar-tag">Scientific</span>
-        <h3 class="home__pillar-title">Understanding</h3>
-        <p class="home__pillar-text">Use that model to better understand the principles behind human motor control.</p>
-      </div>
-      <div class="home__pillar">
-        <span class="home__pillar-tag">Engineering</span>
-        <h3 class="home__pillar-title">Application</h3>
-        <p class="home__pillar-text">Apply it to surgical support, rehabilitation, performance augmentation, and exoskeleton &amp; human-interaction controller design.</p>
-      </div>
+    <h2 class="home__section-title">About</h2>
+    <div class="home__prose">
+      <p>I am a master's student in the Sports Engineering Lab at Seoul National University, advised by Professor Jooeun Ahn.</p>
+      <p>My research goal is to build a <em>digital clone of the human motor controller</em> &mdash; a computational model that reproduces how humans plan and control their movements.</p>
+      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use &mdash; in surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons and other systems that physically interact with the human body.</p>
     </div>
   </section>
 
-  <!-- ================= RESEARCH EXPERIENCES ================= -->
-  <section class="home__section">
-    <h2 class="home__section-title">Research Experiences</h2>
-    <p class="home__section-lead">Questions I have worked on across biomechanics and simulation.</p>
+  <!-- ================= EXPERIENCES (two columns) ================= -->
+  <div class="home__experiences">
 
-    <div class="home__cards">
+    <!-- Research Experiences -->
+    <section class="home__section">
+      <h2 class="home__section-title">Research Experiences</h2>
+      <div class="home__cards">
 
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <p class="home__card-meta">Quantifying Human Movement</p>
-          <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
-          <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
-        </div>
-      </article>
+        <article class="home__card">
+          <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+          <div class="home__card-body">
+            <p class="home__card-meta">Quantifying Human Movement</p>
+            <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
+            <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
+          </div>
+        </article>
 
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <p class="home__card-meta">Under review &middot; npj Aging</p>
-          <h3 class="home__card-title">How does human gait differ between age groups and sexes?</h3>
-          <p class="home__card-note">Characterizing how walking patterns vary across age and between sexes.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/gait-age-sex-differences/">detail</a>
-        </div>
-      </article>
+        <article class="home__card">
+          <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+          <div class="home__card-body">
+            <p class="home__card-meta">Under review &middot; npj Aging</p>
+            <h3 class="home__card-title">How does human gait differ between age groups and sexes?</h3>
+            <p class="home__card-note">Characterizing how walking patterns vary across age and between sexes.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/gait-age-sex-differences/">detail</a>
+          </div>
+        </article>
 
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <p class="home__card-meta">Poster &middot; WCB 2026</p>
-          <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
-          <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/predictive-musculoskeletal-exploration/">detail</a>
-        </div>
-      </article>
+        <article class="home__card">
+          <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+          <div class="home__card-body">
+            <p class="home__card-meta">Poster &middot; WCB 2026</p>
+            <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
+            <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/predictive-musculoskeletal-exploration/">detail</a>
+          </div>
+        </article>
 
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <!-- ================= INDUSTRIAL EXPERIENCES ================= -->
-  <section class="home__section">
-    <h2 class="home__section-title">Industrial Experiences</h2>
-    <p class="home__section-lead">Applying AI across dentistry, vision, and national defense.</p>
+    <!-- Industrial Experiences -->
+    <section class="home__section">
+      <h2 class="home__section-title">Industrial Experiences</h2>
+      <div class="home__cards">
 
-    <div class="home__cards">
+        <article class="home__card">
+          <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+          <div class="home__card-body">
+            <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
+            <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
+            <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
+          </div>
+        </article>
 
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
-          <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
-          <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
-        </div>
-      </article>
+        <article class="home__card">
+          <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+          <div class="home__card-body">
+            <p class="home__card-meta">Intern &middot; Vision AI Lab, NCSOFT</p>
+            <h3 class="home__card-title">How can we solve the data imbalance problem in training datasets?</h3>
+            <p class="home__card-note">Recognition Team &mdash; generating rare human facial expressions to balance datasets.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">detail</a>
+          </div>
+        </article>
 
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <p class="home__card-meta">Intern &middot; Vision AI Lab, NCSOFT</p>
-          <h3 class="home__card-title">How can we solve the data imbalance problem in training datasets?</h3>
-          <p class="home__card-note">Recognition Team &mdash; generating rare human facial expressions to balance datasets.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">detail</a>
-        </div>
-      </article>
+        <article class="home__card">
+          <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+          <div class="home__card-body">
+            <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
+            <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
+            <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
+          </div>
+        </article>
 
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
-          <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
-          <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
-        </div>
-      </article>
+      </div>
+    </section>
 
-    </div>
-  </section>
+  </div>
 
   <!-- ================= PROFESSIONAL SKILLS ================= -->
   <section class="home__section">

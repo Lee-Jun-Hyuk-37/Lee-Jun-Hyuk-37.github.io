@@ -14,13 +14,19 @@
   &__hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 21 / 9;
+    // min-height instead of a fixed aspect ratio, so a tall overlay (e.g. a
+    // three-line title on narrow screens) grows the hero instead of clipping
+    min-height: 260px;
     margin-bottom: 3em;
     overflow: hidden;
     border-radius: $border-radius;
     background: var(--global-base-color);
     display: flex;
     align-items: flex-end;
+
+    @include breakpoint($medium) {
+      min-height: 340px;
+    }
   }
 
   &__hero-media {
@@ -103,65 +109,41 @@
     font-size: $type-size-5;
   }
 
-  /* --- Vision (three pillars) ------------------------------------------ */
-  &__pillars {
-    display: grid;
-    gap: 1.25em;
-    grid-template-columns: 1fr;
+  /* --- Prose (intro & vision) ------------------------------------------ */
+  &__prose {
+    p {
+      margin: 0 0 1em;
+      font-size: $type-size-5;
+      line-height: 1.7;
+    }
 
-    @include breakpoint($medium) {
-      grid-template-columns: repeat(3, 1fr);
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 
-  &__pillar {
-    padding: 1.5em;
-    border: 1px solid var(--global-border-color);
-    border-radius: $border-radius;
-    background: var(--global-bg-color);
+  /* --- Experiences: two sections side by side -------------------------- */
+  &__experiences {
+    display: grid;
+    gap: 2.5em;
+    grid-template-columns: 1fr;
+
+    @include breakpoint($medium) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
-  &__pillar-tag {
-    display: inline-block;
-    margin-bottom: 0.6em;
-    padding: 0.15em 0.7em;
-    border-radius: 100px;
-    background: var(--global-base-color);
-    color: #fff;
-    font-family: $sans-serif;
-    font-size: $type-size-7;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  &__pillar-title {
-    margin: 0 0 0.4em;
-    font-family: $sans-serif;
-    font-size: $type-size-4;
-    font-weight: 700;
-  }
-
-  &__pillar-text {
-    margin: 0;
-    color: var(--global-text-color-light);
-    font-size: $type-size-6;
-    line-height: 1.6;
-  }
-
-  /* --- Experience cards ------------------------------------------------ */
+  /* Cards stack vertically within each column */
   &__cards {
-    display: grid;
-    gap: 1.5em;
-    grid-template-columns: 1fr;
-
-    @include breakpoint($medium) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  &__card {
     display: flex;
     flex-direction: column;
+    gap: 1.25em;
+  }
+
+  /* Horizontal card: thumbnail on the left, text on the right */
+  &__card {
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
     border: 1px solid var(--global-border-color);
     border-radius: $border-radius;
@@ -176,8 +158,9 @@
 
   &__card-thumb {
     display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+    width: 120px;
+    align-self: stretch;   // fill the full card height
     object-fit: cover;
     background: var(--global-border-color);
   }
@@ -186,11 +169,12 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    padding: 1.25em;
+    min-width: 0;          // allow long titles to wrap instead of overflowing
+    padding: 1em 1.25em;
   }
 
   &__card-meta {
-    margin: 0 0 0.5em;
+    margin: 0 0 0.4em;
     color: var(--global-text-color-light);
     font-family: $sans-serif;
     font-size: $type-size-7;
