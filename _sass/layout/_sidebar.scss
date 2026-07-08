@@ -95,6 +95,11 @@
 
   img {
     max-width: 175px;
+    // force a perfect circle regardless of the source image ratio;
+    // non-square images are letterboxed on a white background
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background-color: #fff;
     border-radius: 50%;
 
     @include breakpoint($large) {
