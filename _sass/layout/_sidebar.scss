@@ -18,10 +18,13 @@
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
+    // sticky (instead of fixed) keeps the sidebar in the document flow, so
+    // the footer can never slide over it at the bottom of the page
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(#{$masthead-height} + 1em);
+    max-height: calc(100vh - #{$masthead-height} - 2em);
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;
   }
 
   @include breakpoint($large) {
@@ -80,18 +83,25 @@
    Author profile and links
    ========================================================================== */
 
-.author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
+// Below $large the profile is a horizontal card: full-size avatar,
+// name/bio next to it and the links always visible on the right,
+// wrapping to the next line when the screen is too narrow.
+.author__profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em 20px;
 
   @include breakpoint($large) {
     display: block;
-    width: auto;
-    height: auto;
   }
+}
+
+.author__avatar {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
 
   img {
     max-width: 175px;
@@ -110,17 +120,11 @@
 }
 
 .author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
+  display: block;
   line-height: 1;
 
   @include breakpoint($large) {
-    display: block;
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -134,14 +138,15 @@
 }
 .sidebar .author__name {
   font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-size: $type-size-4;
+
+  @include breakpoint($large) {
+    font-size: $type-size-5;
+  }
 }
 
 .sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
+  display: block;
 }
 
 .author__pronouns {
@@ -155,98 +160,42 @@
 
 .author__bio {
   margin: 0;
+  margin-top: 10px;
 
   @include breakpoint($large) {
-    margin-top: 10px;
     margin-bottom: 20px;
+  }
+}
+
+.sidebar .author__bio {
+  font-size: $type-size-5;
+
+  @include breakpoint($large) {
+    font-size: $type-size-6;
   }
 }
 
 .author__urls-wrapper {
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
   font-family: $sans-serif;
   z-index: 10;
-  position: relative;
-  cursor: pointer;
 
   li:last-child {
     a {
       margin-bottom: 0;
     }
   }
-
-  @include breakpoint($large) {
-    display: block;
-  }
-
-  button {
-    margin-bottom: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
 }
 
+// The links are always visible; the old "Follow" dropdown is gone
 .author__urls {
-  display: none;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  border: 1px solid var(--global-border-color);
-  border-radius: $border-radius;
-  background: var(--global-bg-color);
-  z-index: -1;
-  box-shadow: 0 0 10px rgba(#000, 0.25);
-  cursor: default;
-
-  @include breakpoint($large) {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: var(--global-border-color) transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: #fff transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
+  background: transparent;
 
   li {
     white-space: nowrap;
