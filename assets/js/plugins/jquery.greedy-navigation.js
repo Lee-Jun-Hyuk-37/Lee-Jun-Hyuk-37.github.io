@@ -11,10 +11,6 @@ var $vlinks = $('#site-nav .visible-links');
 var $vlinks_persist_tail = $vlinks.children("*.persist.tail");
 var $hlinks = $('#site-nav .hidden-links');
 
-// Space reserved for the dropdown button, measured while it is still visible;
-// jQuery cannot reliably measure it once it gets display: none.
-var btnReservedSpace = ($btn.outerWidth() || 36) + 30;
-
 // Sum of the children widths, excluding margins. The list is a flex container
 // spanning the full nav width, so measuring the list itself always returns
 // the container width; auto margins (used to right-align links) must also be
@@ -37,21 +33,19 @@ function restoreAllLinks() {
   }
 }
 
-// Stateless recalculation: restore everything, then collapse items until the
-// list fits. Recomputing from scratch keeps the nav self-healing even if an
-// earlier run measured the layout before the stylesheet was applied.
+// Stateless all-or-nothing recalculation: restore everything, then, if the
+// full set of links does not fit, collapse all of them into the dropdown.
+// Recomputing from scratch keeps the nav self-healing even if an earlier run
+// measured the layout before the stylesheet was applied.
 function updateNav() {
 
   restoreAllLinks();
 
   var hiddenCount = 0;
 
-  // The visible list is overflowing the nav
+  // The visible list is overflowing the nav: hide every menu link
   if (visibleLinksWidth() > $nav.width()) {
-    var reducedSpace = $nav.width() - btnReservedSpace;
-
-    while (visibleLinksWidth() > reducedSpace && $vlinks.children("*:not(.persist)").length > 0) {
-      // Move item to the hidden list
+    while ($vlinks.children("*:not(.persist)").length > 0) {
       $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
       hiddenCount++;
     }
@@ -70,14 +64,9 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", hiddenCount);
 
-  // update masthead height and the body/sidebar top padding
+  // update masthead height and the body top padding
   var mastheadHeight = $('.masthead').height();
   $('body').css('padding-top', mastheadHeight + 'px');
-  if ($(".author__urls-wrapper button").is(":visible")) {
-    $(".sidebar").css("padding-top", "");
-  } else {
-    $(".sidebar").css("padding-top", mastheadHeight + "px");
-  }
 
 }
 
