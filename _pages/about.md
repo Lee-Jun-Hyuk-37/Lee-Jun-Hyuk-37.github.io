@@ -34,7 +34,7 @@ redirect_from:
             <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
             <p class="home__card-meta">Poster &middot; WCB 2026</p>
             <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
-            <a class="home__card-link" href="{{ base_path }}/projects/predictive-musculoskeletal-exploration/">detail</a>
+            <a class="home__card-link" href="{{ base_path }}/projects/wcb2026/">detail</a>
           </div>
         </article>
 
