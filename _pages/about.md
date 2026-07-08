@@ -1,56 +1,195 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Jun Hyuk Lee"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+{% include base_path %}
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+<div class="home">
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+  <!-- ================= HERO ================= -->
+  <!-- Drop a GIF into /images/ and set its filename here to replace the placeholder -->
+  {% assign hero_gif = "" %}
+  <div class="home__hero">
+    {% if hero_gif != "" %}
+      <img class="home__hero-media" src="{{ base_path }}/images/{{ hero_gif }}" alt="Biomechanical experiments and musculoskeletal simulation" />
+    {% else %}
+      <div class="home__hero-placeholder">Background reel &mdash; experiments &amp; simulation (coming soon)</div>
+    {% endif %}
+    <div class="home__hero-overlay">
+      <h1 class="home__hero-title">Building a Digital Clone of the Human Motor Controller</h1>
+      <p class="home__hero-subtitle">Biomechanical experiments &amp; inverse simulation &middot; Predictive (forward) simulation of the human motor controller</p>
+    </div>
+  </div>
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+  <!-- ================= RESEARCH VISION ================= -->
+  <section class="home__section">
+    <h2 class="home__section-title">Research Vision</h2>
+    <p class="home__section-lead">I build computational models of how humans control movement &mdash; a <em>digital clone of the human motor controller</em> &mdash; to understand it scientifically and put it to work in the real world.</p>
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+    <div class="home__pillars">
+      <div class="home__pillar">
+        <span class="home__pillar-tag">Goal</span>
+        <h3 class="home__pillar-title">Digital Clone</h3>
+        <p class="home__pillar-text">Recreate the human motor controller as a computational model that reproduces how people actually move.</p>
+      </div>
+      <div class="home__pillar">
+        <span class="home__pillar-tag">Scientific</span>
+        <h3 class="home__pillar-title">Understanding</h3>
+        <p class="home__pillar-text">Use that model to better understand the principles behind human motor control.</p>
+      </div>
+      <div class="home__pillar">
+        <span class="home__pillar-tag">Engineering</span>
+        <h3 class="home__pillar-title">Application</h3>
+        <p class="home__pillar-text">Apply it to surgical support, rehabilitation, performance augmentation, and exoskeleton &amp; human-interaction controller design.</p>
+      </div>
+    </div>
+  </section>
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+  <!-- ================= RESEARCH EXPERIENCES ================= -->
+  <section class="home__section">
+    <h2 class="home__section-title">Research Experiences</h2>
+    <p class="home__section-lead">Questions I have worked on across biomechanics and simulation.</p>
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+    <div class="home__cards">
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <p class="home__card-meta">Quantifying Human Movement</p>
+          <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
+          <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
+        </div>
+      </article>
 
-**Markdown generator**
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <p class="home__card-meta">Under review &middot; npj Aging</p>
+          <h3 class="home__card-title">How does human gait differ between age groups and sexes?</h3>
+          <p class="home__card-note">Characterizing how walking patterns vary across age and between sexes.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/gait-age-sex-differences/">detail</a>
+        </div>
+      </article>
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <p class="home__card-meta">Poster &middot; WCB 2026</p>
+          <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
+          <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/predictive-musculoskeletal-exploration/">detail</a>
+        </div>
+      </article>
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+    </div>
+  </section>
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+  <!-- ================= INDUSTRIAL EXPERIENCES ================= -->
+  <section class="home__section">
+    <h2 class="home__section-title">Industrial Experiences</h2>
+    <p class="home__section-lead">Applying AI across dentistry, vision, and national defense.</p>
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+    <div class="home__cards">
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
+          <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
+          <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <p class="home__card-meta">Intern &middot; Vision AI Lab, NCSOFT</p>
+          <h3 class="home__card-title">How can we solve the data imbalance problem in training datasets?</h3>
+          <p class="home__card-note">Recognition Team &mdash; generating rare human facial expressions to balance datasets.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
+          <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
+          <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= PROFESSIONAL SKILLS ================= -->
+  <section class="home__section">
+    <h2 class="home__section-title">Professional Skills</h2>
+    <p class="home__section-lead">A bridge between sports science and artificial intelligence.</p>
+
+    <div class="home__skills">
+
+      <div class="home__skill">
+        <div class="home__skill-head">
+          <img class="home__skill-logo" src="{{ base_path }}/images/500x300.png" alt="" />
+          <h3 class="home__skill-title">Sports Science (Biomechanics)</h3>
+        </div>
+        <ul class="home__skill-body">
+          <li>B.S. in Sports Science, Seoul National University</li>
+          <li>Biomechanical instruments: motion capture, force plates, force treadmill, EMG</li>
+        </ul>
+      </div>
+
+      <div class="home__skill">
+        <div class="home__skill-head">
+          <img class="home__skill-logo" src="{{ base_path }}/images/500x300.png" alt="" />
+          <h3 class="home__skill-title">Artificial Intelligence</h3>
+        </div>
+        <ul class="home__skill-body">
+          <li>B.S. in Artificial Intelligence, Seoul National University</li>
+          <li>Model development and deployment</li>
+        </ul>
+      </div>
+
+      <div class="home__skill">
+        <div class="home__skill-head">
+          <img class="home__skill-logo" src="{{ base_path }}/images/500x300.png" alt="" />
+          <h3 class="home__skill-title">Development</h3>
+        </div>
+        <ul class="home__skill-body">
+          <li>Languages: Python, C, C++, Java, JavaScript, MATLAB</li>
+          <li>Comfortable in nerdy environments: nvim, Linux, git</li>
+        </ul>
+        <div class="home__logo-row">
+          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />Python</span>
+          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />C / C++</span>
+          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />Java</span>
+          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />JavaScript</span>
+          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />MATLAB</span>
+        </div>
+      </div>
+
+      <div class="home__skill">
+        <div class="home__skill-head">
+          <img class="home__skill-logo" src="{{ base_path }}/images/500x300.png" alt="" />
+          <h3 class="home__skill-title">Leadership</h3>
+        </div>
+        <ul class="home__skill-body">
+          <li>Founder and inaugural captain of Seoul National University's ice hockey team, the Capitals</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="home__note">Open to learning new tools, skills, and people.</p>
+  </section>
+
+</div>

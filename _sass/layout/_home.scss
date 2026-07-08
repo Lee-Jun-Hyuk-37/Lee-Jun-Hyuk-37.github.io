@@ -1,0 +1,315 @@
+/* ==========================================================================
+   HOME PAGE
+   Custom landing-page styles: hero, section headers, card grids, skill list.
+   ========================================================================== */
+
+/* Hide the default page title on the landing page; the hero carries its own
+   heading. The <title> element (browser tab / SEO) is unaffected. */
+.page__inner-wrap:has(.home) > header {
+  display: none;
+}
+
+.home {
+  /* --- Hero ------------------------------------------------------------- */
+  &__hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    margin-bottom: 3em;
+    overflow: hidden;
+    border-radius: $border-radius;
+    background: var(--global-base-color);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__hero-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // Placeholder shown until a real GIF is dropped in
+  &__hero-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1.25em;
+    text-align: center;
+    color: #fff;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.06) 12px,
+      rgba(255, 255, 255, 0.12) 12px,
+      rgba(255, 255, 255, 0.12) 24px
+    );
+  }
+
+  &__hero-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 2em 1.5em 1.5em;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    color: #fff;
+  }
+
+  &__hero-title {
+    margin: 0;
+    color: #fff;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: $type-size-3;
+    line-height: 1.2;
+
+    @include breakpoint($medium) {
+      font-size: $type-size-2;
+    }
+  }
+
+  &__hero-subtitle {
+    margin: 0.5em 0 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: $sans-serif;
+    font-size: $type-size-5;
+    font-weight: 400;
+  }
+
+  /* --- Section scaffolding --------------------------------------------- */
+  &__section {
+    margin-bottom: 3.5em;
+  }
+
+  &__section-title {
+    margin: 0 0 0.25em;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: $type-size-3;
+  }
+
+  &__section-lead {
+    margin: 0 0 1.5em;
+    color: var(--global-text-color-light);
+    font-size: $type-size-5;
+  }
+
+  /* --- Vision (three pillars) ------------------------------------------ */
+  &__pillars {
+    display: grid;
+    gap: 1.25em;
+    grid-template-columns: 1fr;
+
+    @include breakpoint($medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__pillar {
+    padding: 1.5em;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+  }
+
+  &__pillar-tag {
+    display: inline-block;
+    margin-bottom: 0.6em;
+    padding: 0.15em 0.7em;
+    border-radius: 100px;
+    background: var(--global-base-color);
+    color: #fff;
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__pillar-title {
+    margin: 0 0 0.4em;
+    font-family: $sans-serif;
+    font-size: $type-size-4;
+    font-weight: 700;
+  }
+
+  &__pillar-text {
+    margin: 0;
+    color: var(--global-text-color-light);
+    font-size: $type-size-6;
+    line-height: 1.6;
+  }
+
+  /* --- Experience cards ------------------------------------------------ */
+  &__cards {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr;
+
+    @include breakpoint($medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__card-thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--global-border-color);
+  }
+
+  &__card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 1.25em;
+  }
+
+  &__card-meta {
+    margin: 0 0 0.5em;
+    color: var(--global-text-color-light);
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__card-title {
+    margin: 0 0 0.5em;
+    font-family: $sans-serif;
+    font-size: $type-size-5;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  &__card-note {
+    margin: 0 0 1em;
+    color: var(--global-text-color-light);
+    font-size: $type-size-6;
+    line-height: 1.5;
+  }
+
+  &__card-link {
+    margin-top: auto;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    font-weight: 700;
+    text-decoration: none;
+
+    &::after {
+      content: " \2192";
+    }
+  }
+
+  /* --- Skills ---------------------------------------------------------- */
+  &__skills {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr;
+
+    @include breakpoint($medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__skill {
+    padding: 1.5em;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+  }
+
+  &__skill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  &__skill-logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: $border-radius;
+    background: var(--global-border-color);
+  }
+
+  &__skill-title {
+    margin: 0;
+    font-family: $sans-serif;
+    font-size: $type-size-4;
+    font-weight: 700;
+  }
+
+  &__skill-body {
+    margin: 0;
+    padding-left: 1.1em;
+    color: var(--global-text-color-light);
+    font-size: $type-size-6;
+    line-height: 1.6;
+
+    li {
+      margin-bottom: 0.3em;
+    }
+  }
+
+  &__logo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.75em;
+  }
+
+  &__logo-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.3em 0.7em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 100px;
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+  }
+
+  &__logo-chip img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+
+  /* --- Closing note ---------------------------------------------------- */
+  &__note {
+    margin-top: 1.5em;
+    padding: 1.25em 1.5em;
+    border-left: 4px solid var(--global-base-color);
+    background: var(--global-bg-color);
+    color: var(--global-text-color-light);
+    font-size: $type-size-5;
+    font-style: italic;
+  }
+}
