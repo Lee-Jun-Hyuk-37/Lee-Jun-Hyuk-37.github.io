@@ -3,94 +3,13 @@
    Custom landing-page styles: hero, section headers, card grids, skill list.
    ========================================================================== */
 
-/* Hide the default page title on the landing page; the hero carries its own
-   heading. The <title> element (browser tab / SEO) is unaffected. */
+/* Hide the default page title on the landing page; the sidebar and the
+   About section already identify the page. */
 .page__inner-wrap:has(.home) > header {
   display: none;
 }
 
 .home {
-  /* --- Hero ------------------------------------------------------------- */
-  &__hero {
-    position: relative;
-    width: 100%;
-    // min-height instead of a fixed aspect ratio, so a tall overlay (e.g. a
-    // three-line title on narrow screens) grows the hero instead of clipping
-    min-height: 260px;
-    margin-bottom: 3em;
-    overflow: hidden;
-    border-radius: $border-radius;
-    background: var(--global-base-color);
-    display: flex;
-    align-items: flex-end;
-
-    @include breakpoint($medium) {
-      min-height: 340px;
-    }
-  }
-
-  &__hero-media {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  // Placeholder shown until a real GIF is dropped in
-  &__hero-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 1.25em;
-    text-align: center;
-    color: #fff;
-    font-family: $sans-serif;
-    font-size: $type-size-6;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    opacity: 0.6;
-    background: repeating-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.06) 12px,
-      rgba(255, 255, 255, 0.12) 12px,
-      rgba(255, 255, 255, 0.12) 24px
-    );
-  }
-
-  &__hero-overlay {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 2em 1.5em 1.5em;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    color: #fff;
-  }
-
-  &__hero-title {
-    margin: 0;
-    color: #fff;
-    font-family: $sans-serif;
-    font-weight: 700;
-    font-size: $type-size-3;
-    line-height: 1.2;
-
-    @include breakpoint($medium) {
-      font-size: $type-size-2;
-    }
-  }
-
-  &__hero-subtitle {
-    margin: 0.5em 0 0;
-    color: rgba(255, 255, 255, 0.85);
-    font-family: $sans-serif;
-    font-size: $type-size-5;
-    font-weight: 400;
-  }
-
   /* --- Section scaffolding --------------------------------------------- */
   &__section {
     margin-bottom: 3.5em;
@@ -203,26 +122,13 @@
     }
   }
 
-  /* --- Skills ---------------------------------------------------------- */
-  &__skills {
-    display: grid;
-    gap: 1.5em;
-    grid-template-columns: 1fr;
-
-    @include breakpoint($medium) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
+  /* --- Skills (simple stacked list, no cards) -------------------------- */
   &__skill {
-    padding: 1.5em;
-    border: 1px solid var(--global-border-color);
-    border-radius: $border-radius;
-    background: var(--global-bg-color);
+    margin-bottom: 1.5em;
   }
 
   &__skill-title {
-    margin: 0 0 0.6em;
+    margin: 0 0 0.4em;
     font-family: $sans-serif;
     font-size: $type-size-4;
     font-weight: 700;
@@ -238,30 +144,6 @@
     li {
       margin-bottom: 0.3em;
     }
-  }
-
-  &__logo-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    margin-top: 0.75em;
-  }
-
-  &__logo-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-    padding: 0.3em 0.7em;
-    border: 1px solid var(--global-border-color);
-    border-radius: 100px;
-    font-family: $sans-serif;
-    font-size: $type-size-7;
-  }
-
-  &__logo-chip img {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
   }
 
   /* --- Closing note ---------------------------------------------------- */

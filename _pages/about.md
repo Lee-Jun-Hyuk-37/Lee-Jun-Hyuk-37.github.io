@@ -1,6 +1,5 @@
 ---
 permalink: /
-title: "Jun Hyuk Lee"
 author_profile: true
 redirect_from:
   - /about/
@@ -10,21 +9,6 @@ redirect_from:
 {% include base_path %}
 
 <div class="home">
-
-  <!-- ================= HERO ================= -->
-  <!-- Drop a GIF into /images/ and set its filename here to replace the placeholder -->
-  {% assign hero_gif = "" %}
-  <div class="home__hero">
-    {% if hero_gif != "" %}
-      <img class="home__hero-media" src="{{ base_path }}/images/{{ hero_gif }}" alt="Biomechanical experiments and musculoskeletal simulation" />
-    {% else %}
-      <div class="home__hero-placeholder">Background reel &mdash; experiments &amp; simulation (coming soon)</div>
-    {% endif %}
-    <div class="home__hero-overlay">
-      <h1 class="home__hero-title">Building a Digital Clone of the Human Motor Controller</h1>
-      <p class="home__hero-subtitle">Biomechanical experiments &amp; inverse simulation &middot; Predictive (forward) simulation of the human motor controller</p>
-    </div>
-  </div>
 
   <!-- ================= ABOUT / RESEARCH GOAL ================= -->
   <section class="home__section">
@@ -47,10 +31,10 @@ redirect_from:
         <article class="home__card">
           <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
           <div class="home__card-body">
-            <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
-            <p class="home__card-meta">Quantifying Human Movement</p>
-            <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
-            <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
+            <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
+            <p class="home__card-meta">Poster &middot; WCB 2026</p>
+            <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/predictive-musculoskeletal-exploration/">detail</a>
           </div>
         </article>
 
@@ -67,10 +51,10 @@ redirect_from:
         <article class="home__card">
           <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
           <div class="home__card-body">
-            <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
-            <p class="home__card-meta">Poster &middot; WCB 2026</p>
-            <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
-            <a class="home__card-link" href="{{ base_path }}/projects/predictive-musculoskeletal-exploration/">detail</a>
+            <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
+            <p class="home__card-meta">Quantifying Human Movement</p>
+            <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
           </div>
         </article>
 
@@ -85,10 +69,10 @@ redirect_from:
         <article class="home__card">
           <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
           <div class="home__card-body">
-            <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
-            <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
-            <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
-            <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
+            <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
+            <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
+            <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
           </div>
         </article>
 
@@ -105,10 +89,10 @@ redirect_from:
         <article class="home__card">
           <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
           <div class="home__card-body">
-            <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
-            <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
-            <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
-            <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
+            <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
+            <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
+            <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
+            <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
           </div>
         </article>
 
@@ -145,13 +129,6 @@ redirect_from:
           <li>Languages: Python, C, C++, Java, JavaScript, MATLAB</li>
           <li>Comfortable in nerdy environments: nvim, Linux, git</li>
         </ul>
-        <div class="home__logo-row">
-          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />Python</span>
-          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />C / C++</span>
-          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />Java</span>
-          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />JavaScript</span>
-          <span class="home__logo-chip"><img src="{{ base_path }}/images/500x300.png" alt="" />MATLAB</span>
-        </div>
       </div>
 
       <div class="home__skill">
