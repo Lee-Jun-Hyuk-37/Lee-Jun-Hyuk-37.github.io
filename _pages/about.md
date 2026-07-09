@@ -14,9 +14,9 @@ redirect_from:
   <section class="home__section">
     <h2 class="home__section-title">About</h2>
     <div class="home__prose">
-      <p>I am a master's student in the Sports Engineering Lab at Seoul National University, advised by Professor Jooeun Ahn.</p>
-      <p>My research goal is to build a <em>digital clone of the human motor controller</em> &mdash; a computational model that reproduces how humans plan and control their movements.</p>
-      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use &mdash; in surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons and other systems that physically interact with the human body.</p>
+      <p>I am a master's student in the <a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a> at Seoul National University, advised by Professor <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a>.</p>
+      <p>My research goal is to build a <em>digital clone of the human motor controller</em>: a computational model that reproduces how humans plan and control their movements.</p>
+      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons and other systems that physically interact with the human body.</p>
     </div>
   </section>
 
@@ -42,50 +42,10 @@ redirect_from:
       <article class="home__card">
         <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
         <div class="home__card-body">
-          <h3 class="home__card-title">How does human gait differ between age groups and sexes?</h3>
-          <p class="home__card-meta">Under review &middot; npj Aging</p>
-          <p class="home__card-note">Characterizing how walking patterns vary across age and between sexes.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/gait-age-sex-differences/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
           <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
           <p class="home__card-meta">Quantifying Human Movement</p>
           <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
           <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
-          <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
-          <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How can we solve the data imbalance problem in training datasets?</h3>
-          <p class="home__card-meta">Intern &middot; Vision AI Lab, NCSOFT</p>
-          <p class="home__card-note">Recognition Team &mdash; generating rare human facial expressions to balance datasets.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
-          <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
-          <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
         </div>
       </article>
 
@@ -116,18 +76,18 @@ redirect_from:
 
       <li class="home__list-item">
         <div class="home__list-head">
-          <span class="home__list-title">Sports Engineering Lab, Seoul National University</span>
+          <span class="home__list-title"><a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a>, Seoul National University</span>
           <span class="home__list-date">Sep. 2025 &ndash; Present</span>
         </div>
-        <p class="home__list-sub">Master's Student &middot; Advisor: Jooeun Ahn</p>
+        <p class="home__list-sub">Master's Student &middot; Advisor: <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a></p>
       </li>
 
       <li class="home__list-item">
         <div class="home__list-head">
-          <span class="home__list-title">NeuMove Lab</span>
+          <span class="home__list-title"><a href="https://neumove.org/" target="_blank" rel="noopener noreferrer">NeuMove Lab</a></span>
           <span class="home__list-date">Jul. 2025 &ndash; Aug. 2025</span>
         </div>
-        <p class="home__list-sub">Visiting Master's Student &middot; Advisor: Seungmoon Song</p>
+        <p class="home__list-sub">Visiting Master's Student &middot; Advisor: <a href="http://seungmoon.com/" target="_blank" rel="noopener noreferrer">Seungmoon Song</a></p>
       </li>
 
       <li class="home__list-item">
@@ -156,10 +116,10 @@ redirect_from:
 
       <li class="home__list-item">
         <div class="home__list-head">
-          <span class="home__list-title">Sports Engineering Lab, Seoul National University</span>
+          <span class="home__list-title"><a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a>, Seoul National University</span>
           <span class="home__list-date">Jul. 2020 &ndash; Aug. 2023</span>
         </div>
-        <p class="home__list-sub">Research Intern &middot; Advisor: Jooeun Ahn</p>
+        <p class="home__list-sub">Research Intern &middot; Advisor: <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a></p>
       </li>
 
     </ul>
