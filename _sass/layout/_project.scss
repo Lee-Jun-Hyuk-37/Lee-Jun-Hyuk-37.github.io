@@ -1,0 +1,161 @@
+/* ==========================================================================
+   PROJECT PAGE
+   Article-style layout for a single project write-up (hero, figures, math).
+   ========================================================================== */
+
+/* Hide the default page title; the project supplies its own hero + title. */
+.page__inner-wrap:has(.project) > header {
+  display: none;
+}
+
+.project {
+  --project-muted: #6c7176;
+
+  /* --- Hero ------------------------------------------------------------ */
+  &__hero {
+    width: 100%;
+    margin-bottom: 1.25em;
+    overflow: hidden;
+    border-radius: $border-radius;
+    background: var(--global-base-color);
+  }
+
+  &__hero-media {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- "No ..." emphasis line ----------------------------------------- */
+  &__no {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 0.9em;
+    margin-bottom: 2em;
+  }
+
+  &__no-item {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: $type-size-4;
+    line-height: 1.2;
+    color: var(--global-link-color);
+
+    @include breakpoint($medium) {
+      font-size: $type-size-3;
+    }
+  }
+
+  /* --- Title / authors ------------------------------------------------ */
+  &__title {
+    margin: 0 0 0.3em;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: $type-size-3;
+    line-height: 1.25;
+  }
+
+  &__authors {
+    margin: 0 0 0.15em;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: $type-size-5;
+  }
+
+  &__affil {
+    margin: 0;
+    color: var(--project-muted);
+    font-size: $type-size-6;
+  }
+
+  /* --- Sections ------------------------------------------------------- */
+  &__section {
+    margin-top: 2.5em;
+  }
+
+  &__heading {
+    margin: 0 0 0.75em;
+    padding-bottom: 0.25em;
+    border-bottom: 2px solid var(--global-border-color);
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: $type-size-4;
+  }
+
+  p {
+    font-size: $type-size-5;
+    line-height: 1.7;
+  }
+
+  &__mono {
+    font-family: $monospace;
+    font-size: 0.9em;
+  }
+
+  /* --- Bullet points -------------------------------------------------- */
+  &__points {
+    margin: 0 0 1em;
+    padding-left: 1.2em;
+
+    li {
+      margin-bottom: 0.5em;
+      font-size: $type-size-5;
+      line-height: 1.6;
+    }
+  }
+
+  /* --- Figures -------------------------------------------------------- */
+  &__figure {
+    margin: 1.5em 0;
+    text-align: center;
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px solid var(--global-border-color);
+      border-radius: $border-radius;
+    }
+
+    figcaption {
+      margin-top: 0.6em;
+      color: var(--project-muted);
+      font-size: $type-size-6;
+      line-height: 1.5;
+    }
+  }
+
+  /* --- Equation ------------------------------------------------------- */
+  &__equation {
+    margin: 1.5em 0;
+    padding: 1em 1.25em;
+    overflow-x: auto;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+    text-align: center;
+  }
+
+  /* --- References / acknowledgement ----------------------------------- */
+  &__refs {
+    margin: 0 0 1.25em;
+    padding-left: 1.4em;
+
+    li {
+      margin-bottom: 0.5em;
+      font-size: $type-size-6;
+      line-height: 1.55;
+    }
+  }
+
+  &__ack {
+    color: var(--project-muted);
+    font-size: $type-size-7;
+    line-height: 1.6;
+  }
+}
+
+/* Dark-mode muted override */
+html[data-theme="dark"] .project {
+  --project-muted: #b9bdc1;
+}
