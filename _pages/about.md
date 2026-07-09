@@ -15,8 +15,18 @@ redirect_from:
     <h2 class="home__section-title">About</h2>
     <div class="home__prose">
       <p>I am a master's student in the <a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a> at Seoul National University, advised by Professor <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a>.</p>
-      <p>My research goal is to build a <em>digital clone of the human motor controller</em>: a computational model that reproduces how humans plan and control their movements.</p>
-      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons and other systems that physically interact with the human body.</p>
+      <p>My research goal is to build a <strong>digital clone of the human motor controller</strong>.</p>
+      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons and any other systems that physically interact with the human body.</p>
+    </div>
+
+    <div class="home__keywords">
+      <span class="home__keyword">Neuromuscular Control</span>
+      <span class="home__keyword">Musculoskeletal Simulation</span>
+      <span class="home__keyword">Biomechanics</span>
+      <span class="home__keyword">Artificial Intelligence</span>
+      <span class="home__keyword">Reinforcement Learning</span>
+      <span class="home__keyword">Nonlinear Dynamics</span>
+      <span class="home__keyword">Human Pose Estimation</span>
     </div>
   </section>
 
@@ -84,7 +94,7 @@ redirect_from:
 
       <li class="home__list-item">
         <div class="home__list-head">
-          <span class="home__list-title"><a href="https://neumove.org/" target="_blank" rel="noopener noreferrer">NeuMove Lab</a></span>
+          <span class="home__list-title"><a href="https://neumove.org/" target="_blank" rel="noopener noreferrer">NeuMove Lab</a>, Northeastern University</span>
           <span class="home__list-date">Jul. 2025 &ndash; Aug. 2025</span>
         </div>
         <p class="home__list-sub">Visiting Master's Student &middot; Advisor: <a href="http://seungmoon.com/" target="_blank" rel="noopener noreferrer">Seungmoon Song</a></p>
@@ -96,6 +106,7 @@ redirect_from:
           <span class="home__list-date">Sep. 2023 &ndash; May 2025</span>
         </div>
         <p class="home__list-sub">AI Development Specialist &middot; Naval Intelligence Information System Group &amp; Head Quarter Battalion</p>
+        <p class="home__list-desc">As the Navy's first AI development specialist, I worked to better leverage AI for defense technology. <a class="home__list-link" href="{{ base_path }}/projects/navy-ai-officer/">details</a></p>
       </li>
 
       <li class="home__list-item">
@@ -104,6 +115,7 @@ redirect_from:
           <span class="home__list-date">Jan. 2023 &ndash; Feb. 2023</span>
         </div>
         <p class="home__list-sub">Intern &middot; Recognition Team, Vision AI Lab</p>
+        <p class="home__list-desc">One of Korea's top 3 gaming companies.</p>
       </li>
 
       <li class="home__list-item">
@@ -112,6 +124,7 @@ redirect_from:
           <span class="home__list-date">Oct. 2021 &ndash; Feb. 2022</span>
         </div>
         <p class="home__list-sub">AI Engineer &middot; AI Team</p>
+        <p class="home__list-desc">A company aiming to digitalize dental services.</p>
       </li>
 
       <li class="home__list-item">
@@ -132,26 +145,26 @@ redirect_from:
     <div class="home__skills">
 
       <div class="home__skill">
-        <h3 class="home__skill-title">Sports Science (Biomechanics)</h3>
+        <h3 class="home__skill-title">Sports Science</h3>
         <ul class="home__skill-body">
           <li>B.S. in Sports Science, Seoul National University</li>
-          <li>Biomechanical instruments: motion capture, force plates, force treadmill, EMG</li>
+          <li>Biomechanical instruments: motion capture (Qualisys, Optitrack, Xsens), force plates (Bertec, AMTI, Kistler), force treadmill (Bertec), EMG (Delsys)</li>
         </ul>
       </div>
 
       <div class="home__skill">
-        <h3 class="home__skill-title">Artificial Intelligence</h3>
+        <h3 class="home__skill-title">Data Science</h3>
         <ul class="home__skill-body">
           <li>B.S. in Artificial Intelligence, Seoul National University</li>
-          <li>Model development and deployment</li>
+          <li>Enjoy and excel at extracting meaningful insights from any given data</li>
         </ul>
       </div>
 
       <div class="home__skill">
-        <h3 class="home__skill-title">Development</h3>
+        <h3 class="home__skill-title">Software Engineering</h3>
         <ul class="home__skill-body">
           <li>Languages: Python, C, C++, Java, JavaScript, MATLAB</li>
-          <li>Comfortable in nerdy environments: nvim, Linux, git</li>
+          <li>Enjoy working in nerdy environments such as nvim, Linux, and git</li>
         </ul>
       </div>
 

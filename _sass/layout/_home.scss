@@ -9,7 +9,17 @@
   display: none;
 }
 
+/* Dark-mode override for the muted gray (lighter, so it shows on the dark bg) */
+html[data-theme="dark"] .home {
+  --home-muted: #b9bdc1;
+}
+
 .home {
+  /* Muted gray for dates / metadata. The theme's --global-text-color-light is
+     near-white in dark mode, so we define our own value that stays legible and
+     clearly distinct from body text in both themes. */
+  --home-muted: #6c7176;
+
   /* --- Section scaffolding --------------------------------------------- */
   &__section {
     margin-bottom: 3.5em;
@@ -39,6 +49,25 @@
     p:last-child {
       margin-bottom: 0;
     }
+  }
+
+  /* --- Keyword chips --------------------------------------------------- */
+  &__keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1.25em;
+  }
+
+  &__keyword {
+    display: inline-block;
+    padding: 0.25em 0.8em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 100px;
+    color: var(--global-link-color);
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    line-height: 1.5;
   }
 
   /* --- Info list (education & careers) --------------------------------- */
@@ -71,6 +100,25 @@
         margin-bottom: 0.15em;
       }
     }
+
+    // Secondary description line (company note / details link), muted gray
+    .home__list-desc {
+      margin: 0.35em 0 0;
+      color: var(--home-muted);
+      font-size: $type-size-6;
+      line-height: 1.5;
+    }
+
+    .home__list-link {
+      color: var(--global-link-color);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &::after {
+        content: " \2192";
+      }
+    }
   }
 
   &__list-head {
@@ -88,7 +136,7 @@
   }
 
   &__list-date {
-    color: var(--global-text-color-light);
+    color: var(--home-muted);
     font-family: $sans-serif;
     font-size: $type-size-6;
     white-space: nowrap;
@@ -176,7 +224,7 @@
 
     .home__card-meta {
       margin: 0 0 0.3em;
-      color: var(--global-text-color);
+      color: var(--home-muted);
       font-family: $sans-serif;
       font-size: $type-size-7;
       line-height: 1.4;
@@ -228,9 +276,12 @@
   /* --- Closing note ---------------------------------------------------- */
   &__note {
     margin-top: 1.5em;
-    padding: 1.25em 1.5em;
-    border-left: 4px solid var(--global-base-color);
-    background: var(--global-bg-color);
+    padding: 1em 1.25em;
+    // Link-colored bar + faint tint, visible in both light and dark themes
+    // (the theme's base color equals the dark-mode background, so it vanished).
+    border-left: 4px solid var(--global-link-color);
+    border-radius: 0 $border-radius $border-radius 0;
+    background: color-mix(in srgb, var(--global-link-color) 8%, transparent);
     color: var(--global-link-color);
     font-size: $type-size-5;
     font-style: italic;
