@@ -26,6 +26,20 @@
     height: auto;
   }
 
+  /* Four equal-width clips shown side by side as one continuous strip */
+  &__hero--strip {
+    display: flex;
+    gap: 0;
+
+    img {
+      flex: 1 1 0;
+      width: 25%;
+      min-width: 0;
+      height: auto;
+      display: block;
+    }
+  }
+
   /* --- "No ..." emphasis line ----------------------------------------- */
   &__no {
     display: flex;
