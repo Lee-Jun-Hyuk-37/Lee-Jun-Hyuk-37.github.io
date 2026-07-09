@@ -301,3 +301,10 @@ html[data-theme="dark"] .home {
     content: " \2192";
   }
 }
+
+/* Inline variant: sits right after the sentence instead of on its own line. */
+.home a.home__detail-link--inline {
+  display: inline;
+  margin-top: 0;
+  margin-left: 0.4em;
+}

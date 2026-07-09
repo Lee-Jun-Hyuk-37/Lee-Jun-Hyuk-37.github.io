@@ -54,7 +54,7 @@ redirect_from:
         <div class="home__card-body">
           <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
           <p class="home__card-meta">Published in Chaos, Solitons &amp; Fractals and Royal Society Open Science</p>
-          <p class="home__card-note">Developed a new algorithm that resolves practical issues in the Maximal Lyapunov Exponent for quantifying gait stability, and identified the optimal settings for the existing algorithm.</p>
+          <p class="home__card-note">Developed a new algorithm that resolves practical issues in the Maximal Lyapunov Exponent, and identified the optimal settings for the existing algorithm.</p>
           <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
         </div>
       </article>
@@ -177,9 +177,8 @@ redirect_from:
       <div class="home__skill">
         <h3 class="home__skill-title">Leadership</h3>
         <ul class="home__skill-body">
-          <li>Founder and inaugural captain of Seoul National University's ice hockey team, the Capitals</li>
+          <li>Founder and inaugural captain of Seoul National University's ice hockey team, the Capitals <a class="home__detail-link home__detail-link--inline" href="{{ base_path }}/media/#ice-hockey">details</a></li>
         </ul>
-        <a class="home__detail-link" href="{{ base_path }}/media/#ice-hockey">details</a>
       </div>
 
     </div>
