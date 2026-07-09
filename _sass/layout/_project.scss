@@ -147,6 +147,15 @@
     }
   }
 
+  /* Caption for a full-width media strip (outside a <figure>) */
+  &__caption {
+    margin: 0.6em 0 0;
+    color: var(--project-muted);
+    font-size: $type-size-6;
+    line-height: 1.5;
+    text-align: center;
+  }
+
   /* --- Equation ------------------------------------------------------- */
   &__equation {
     margin: 1.5em 0;
@@ -168,12 +177,6 @@
       font-size: $type-size-6;
       line-height: 1.55;
     }
-  }
-
-  &__ack {
-    color: var(--project-muted);
-    font-size: $type-size-7;
-    line-height: 1.6;
   }
 }
 
