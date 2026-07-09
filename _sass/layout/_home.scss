@@ -94,15 +94,11 @@
     white-space: nowrap;
   }
 
-  /* --- Selected projects: single responsive card grid ------------------ */
+  /* --- Selected projects: single-column card list ---------------------- */
   &__cards {
     display: grid;
     gap: 1.25em;
     grid-template-columns: 1fr;
-
-    @include breakpoint($medium) {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   /* Section header holding the title and the "View all" button side by side.
@@ -155,7 +151,7 @@
   &__card-thumb {
     display: block;
     flex-shrink: 0;
-    width: 120px;
+    width: 180px;
     height: auto;            // keep the image ratio; the whole picture stays visible
     align-self: flex-start;  // sit at the top, do not stretch to card height
     object-fit: contain;
@@ -235,7 +231,7 @@
     padding: 1.25em 1.5em;
     border-left: 4px solid var(--global-base-color);
     background: var(--global-bg-color);
-    color: var(--global-text-color-light);
+    color: var(--global-link-color);
     font-size: $type-size-5;
     font-style: italic;
   }

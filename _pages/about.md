@@ -204,7 +204,7 @@ redirect_from:
 
     </div>
 
-    <p class="home__note">Open to learning new tools, skills, and people.</p>
+    <p class="home__note">Always open to learning new tools, skills, and people.</p>
   </section>
 
 </div>
