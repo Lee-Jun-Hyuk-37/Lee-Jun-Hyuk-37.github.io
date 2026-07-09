@@ -31,7 +31,8 @@
     display: flex;
     gap: 0;
 
-    img {
+    img,
+    video {
       flex: 1 1 0;
       width: 25%;
       min-width: 0;
@@ -58,6 +59,11 @@
     @include breakpoint($medium) {
       font-size: $type-size-3;
     }
+  }
+
+  /* The single positive statement, set apart from the "No ..." list */
+  &__no-item--only {
+    color: var(--global-text-color);
   }
 
   /* --- Title / authors ------------------------------------------------ */
@@ -120,7 +126,9 @@
 
   /* --- Figures -------------------------------------------------------- */
   &__figure {
-    margin: 1.5em 0;
+    // keep figures at a comfortable size rather than filling the column
+    max-width: 460px;
+    margin: 1.5em auto;
     text-align: center;
 
     img {
