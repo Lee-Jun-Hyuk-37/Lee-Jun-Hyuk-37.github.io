@@ -16,7 +16,7 @@ redirect_from:
     <div class="home__prose">
       <p>I am a master's student in the <a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a> at Seoul National University, advised by Professor <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a>.</p>
       <p>My research goal is to build a <strong>digital clone of the human motor controller</strong>.</p>
-      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons and any other systems that physically interact with the human body.</p>
+      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons or any other system that physically interacts with the human body.</p>
     </div>
 
     <div class="home__keywords">
@@ -69,8 +69,9 @@ redirect_from:
       <li class="home__list-item">
         <div class="home__list-head">
           <span class="home__list-title">Seoul National University</span>
-          <span class="home__list-date">Graduated Cum Laude</span>
+          <span class="home__list-date">Aug. 2023</span>
         </div>
+        <p class="home__list-sub">Graduated Cum Laude</p>
         <ul class="home__list-sub">
           <li>Bachelor of Sports Science</li>
           <li>Bachelor of Science in Artificial Intelligence</li>
@@ -106,7 +107,8 @@ redirect_from:
           <span class="home__list-date">Sep. 2023 &ndash; May 2025</span>
         </div>
         <p class="home__list-sub">AI Development Specialist &middot; Naval Intelligence Information System Group &amp; Head Quarter Battalion</p>
-        <p class="home__list-desc">As the Navy's first AI development specialist, I worked to better leverage AI for defense technology. <a class="home__list-link" href="{{ base_path }}/projects/navy-ai-officer/">details</a></p>
+        <p class="home__list-desc">As the Navy's first AI development specialist, I worked to better leverage AI for national defense.</p>
+        <a class="home__detail-link" href="{{ base_path }}/projects/navy-ai-officer/">details</a>
       </li>
 
       <li class="home__list-item">
@@ -116,6 +118,7 @@ redirect_from:
         </div>
         <p class="home__list-sub">Intern &middot; Recognition Team, Vision AI Lab</p>
         <p class="home__list-desc">One of Korea's top 3 gaming companies.</p>
+        <a class="home__detail-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">details</a>
       </li>
 
       <li class="home__list-item">
@@ -125,6 +128,7 @@ redirect_from:
         </div>
         <p class="home__list-sub">AI Engineer &middot; AI Team</p>
         <p class="home__list-desc">A company aiming to digitalize dental services.</p>
+        <a class="home__detail-link" href="{{ base_path }}/projects/dental-ai-quve/">details</a>
       </li>
 
       <li class="home__list-item">
@@ -133,6 +137,8 @@ redirect_from:
           <span class="home__list-date">Jul. 2020 &ndash; Aug. 2023</span>
         </div>
         <p class="home__list-sub">Research Intern &middot; Advisor: <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a></p>
+        <p class="home__list-desc">Published two research papers as an undergraduate.</p>
+        <a class="home__detail-link" href="{{ base_path }}/media/#undergraduate-research">details</a>
       </li>
 
     </ul>
@@ -148,7 +154,7 @@ redirect_from:
         <h3 class="home__skill-title">Sports Science</h3>
         <ul class="home__skill-body">
           <li>B.S. in Sports Science, Seoul National University</li>
-          <li>Biomechanical instruments: motion capture (Qualisys, Optitrack, Xsens), force plates (Bertec, AMTI, Kistler), force treadmill (Bertec), EMG (Delsys)</li>
+          <li>Biomechanical instruments: motion capture (Qualisys, Optitrack, Xsens), force plates (Bertec, AMTI), force treadmill (Bertec), EMG (Delsys)</li>
         </ul>
       </div>
 
@@ -156,7 +162,7 @@ redirect_from:
         <h3 class="home__skill-title">Data Science</h3>
         <ul class="home__skill-body">
           <li>B.S. in Artificial Intelligence, Seoul National University</li>
-          <li>Enjoy and excel at extracting meaningful insights from any given data</li>
+          <li>Enjoy and excel at extracting meaningful insights from any given data (time series, images, audio, video, text, 3D data, and more)</li>
         </ul>
       </div>
 
@@ -173,6 +179,7 @@ redirect_from:
         <ul class="home__skill-body">
           <li>Founder and inaugural captain of Seoul National University's ice hockey team, the Capitals</li>
         </ul>
+        <a class="home__detail-link" href="{{ base_path }}/media/#ice-hockey">details</a>
       </div>
 
     </div>
