@@ -16,7 +16,7 @@ redirect_from:
     <div class="home__prose">
       <p>I am a master's student in the <a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a> at Seoul National University, advised by Professor <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a>.</p>
       <p>My research goal is to build a <strong>digital clone of the human motor controller</strong>.</p>
-      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and the design of controllers for exoskeletons or any other system that physically interacts with the human body.</p>
+      <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and controller design for exoskeletons or any other system that physically interacts with the human body.</p>
     </div>
 
     <div class="home__keywords">
@@ -44,7 +44,7 @@ redirect_from:
         <div class="home__card-body">
           <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
           <p class="home__card-meta">Poster &middot; WCB 2026</p>
-          <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
+          <p class="home__card-note">Tackled the most fundamental problem in an elegant, physiologically plausible way.</p>
           <a class="home__card-link" href="{{ base_path }}/projects/wcb2026/">detail</a>
         </div>
       </article>
@@ -53,8 +53,8 @@ redirect_from:
         <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
         <div class="home__card-body">
           <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
-          <p class="home__card-meta">Quantifying Human Movement</p>
-          <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
+          <p class="home__card-meta">Published in Chaos, Solitons &amp; Fractals and Royal Society Open Science</p>
+          <p class="home__card-note">Developed a new algorithm that resolves practical issues in the Maximal Lyapunov Exponent for quantifying gait stability, and identified the optimal settings for the existing algorithm.</p>
           <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
         </div>
       </article>
@@ -162,7 +162,7 @@ redirect_from:
         <h3 class="home__skill-title">Data Science</h3>
         <ul class="home__skill-body">
           <li>B.S. in Artificial Intelligence, Seoul National University</li>
-          <li>Enjoy and excel at extracting meaningful insights from any given data (time series, images, audio, video, text, 3D data, and more)</li>
+          <li>Enjoy and excel at extracting meaningful insights from any given data (time series, images, audio, text, 3D data, and more)</li>
         </ul>
       </div>
 
