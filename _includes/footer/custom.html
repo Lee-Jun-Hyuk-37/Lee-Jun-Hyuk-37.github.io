@@ -16,19 +16,32 @@
     await mermaid.run({querySelector:'code.language-mermaid'});
 </script>
 
-<!-- Keep looping project videos playing even if the browser throttles them -->
+<!-- Play only the on-screen project videos; pausing off-screen ones keeps the
+     browser from throttling too many simultaneous videos, so whatever the
+     viewer is looking at keeps looping. -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var vids = document.querySelectorAll('.project video[loop]');
   if (!vids.length) return;
-  function resume(v) { if (v.paused && !v.ended) { v.play().catch(function () {}); } }
+  function tryPlay(v) { v.play().catch(function () {}); }
+  function onScreen(v) {
+    var r = v.getBoundingClientRect();
+    return r.bottom > 0 && r.top < (window.innerHeight || document.documentElement.clientHeight);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { tryPlay(e.target); } else { e.target.pause(); }
+      });
+    }, { threshold: 0.15 });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+  // If a visible video is paused by the browser anyway, resume it.
   vids.forEach(function (v) {
-    v.addEventListener('pause', function () { resume(v); });
+    v.addEventListener('pause', function () {
+      if (!v.ended && onScreen(v)) { tryPlay(v); }
+    });
   });
-  document.addEventListener('visibilitychange', function () {
-    if (!document.hidden) { vids.forEach(resume); }
-  });
-  setInterval(function () { vids.forEach(resume); }, 3000);
 });
 </script>
 
