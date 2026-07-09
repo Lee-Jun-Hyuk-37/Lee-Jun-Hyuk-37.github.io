@@ -119,6 +119,17 @@ html[data-theme="dark"] .home {
         content: " \2192";
       }
     }
+
+    // Links inside the bold institution title should match the title text
+    // instead of standing out in link blue; underline only on hover.
+    .home__list-title a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__list-head {
