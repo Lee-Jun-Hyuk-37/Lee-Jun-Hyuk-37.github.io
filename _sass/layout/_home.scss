@@ -194,6 +194,22 @@ html[data-theme="dark"] .home {
     object-fit: contain;
   }
 
+  // Four clips shown side by side inside the thumbnail box; each keeps its
+  // own aspect ratio, so any leftover space just stays empty.
+  &__card-thumb--videos {
+    display: flex;
+    align-items: flex-start;
+    object-fit: unset;
+
+    video {
+      flex: 1 1 0;
+      min-width: 0;
+      width: 25%;
+      height: auto;
+      display: block;
+    }
+  }
+
   // Descendant selectors here (e.g. .home__card-body .home__card-meta) raise
   // specificity to (0,2,0) so they win over the theme's `.page__content p`
   // rule, which otherwise forces a large paragraph margin.

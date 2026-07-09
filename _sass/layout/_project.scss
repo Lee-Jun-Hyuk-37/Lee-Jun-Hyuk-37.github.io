@@ -181,3 +181,19 @@
 html[data-theme="dark"] .project {
   --project-muted: #b9bdc1;
 }
+
+/* Four-clip thumbnail strip used inside a project's list excerpt.
+   Each clip keeps its own aspect ratio; leftover space is left empty. */
+.proj-thumb {
+  display: flex;
+  max-width: 480px;
+  margin-top: 0.5em;
+
+  video {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 25%;
+    height: auto;
+    display: block;
+  }
+}

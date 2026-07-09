@@ -21,7 +21,7 @@
      viewer is looking at keeps looping. -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var vids = document.querySelectorAll('.project video[loop]');
+  var vids = document.querySelectorAll('video[loop]');
   if (!vids.length) return;
   function tryPlay(v) { v.play().catch(function () {}); }
   function onScreen(v) {

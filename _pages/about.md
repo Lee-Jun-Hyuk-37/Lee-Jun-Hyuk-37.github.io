@@ -40,7 +40,12 @@ redirect_from:
     <div class="home__cards">
 
       <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-thumb home__card-thumb--videos">
+          <video autoplay loop muted playsinline><source src="{{ base_path }}/images/wcb2026/sprint_60fps.mp4" type="video/mp4"></video>
+          <video autoplay loop muted playsinline><source src="{{ base_path }}/images/wcb2026/sprint_60fps_slow.mp4" type="video/mp4"></video>
+          <video autoplay loop muted playsinline><source src="{{ base_path }}/images/wcb2026/sprint_60fps_frontal.mp4" type="video/mp4"></video>
+          <video autoplay loop muted playsinline><source src="{{ base_path }}/images/wcb2026/sprint_60fps_frontal_slow.mp4" type="video/mp4"></video>
+        </div>
         <div class="home__card-body">
           <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
           <p class="home__card-meta">Poster &middot; WCB 2026</p>
