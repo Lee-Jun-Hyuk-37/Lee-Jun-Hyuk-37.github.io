@@ -20,6 +20,78 @@ redirect_from:
     </div>
   </section>
 
+  <!-- ================= SELECTED PROJECTS ================= -->
+  <section class="home__section">
+    <div class="home__section-head">
+      <h2 class="home__section-title">Selected Projects</h2>
+      <a class="home__more-link" href="{{ base_path }}/projects/">View all projects</a>
+    </div>
+
+    <div class="home__cards">
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
+          <p class="home__card-meta">Poster &middot; WCB 2026</p>
+          <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/wcb2026/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">How does human gait differ between age groups and sexes?</h3>
+          <p class="home__card-meta">Under review &middot; npj Aging</p>
+          <p class="home__card-note">Characterizing how walking patterns vary across age and between sexes.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/gait-age-sex-differences/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
+          <p class="home__card-meta">Quantifying Human Movement</p>
+          <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
+          <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
+          <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">How can we solve the data imbalance problem in training datasets?</h3>
+          <p class="home__card-meta">Intern &middot; Vision AI Lab, NCSOFT</p>
+          <p class="home__card-note">Recognition Team &mdash; generating rare human facial expressions to balance datasets.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">detail</a>
+        </div>
+      </article>
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
+          <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
+          <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
   <!-- ================= EDUCATION ================= -->
   <section class="home__section">
     <h2 class="home__section-title">Education</h2>
@@ -91,79 +163,6 @@ redirect_from:
       </li>
 
     </ul>
-  </section>
-
-  <!-- ================= SELECTED PROJECTS ================= -->
-  <section class="home__section">
-    <h2 class="home__section-title">Selected Projects</h2>
-
-    <div class="home__cards">
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How can we solve the inefficient exploration problem in predictive musculoskeletal simulation?</h3>
-          <p class="home__card-meta">Poster &middot; WCB 2026</p>
-          <p class="home__card-note">Toward more sample-efficient forward simulation of human motor control.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/wcb2026/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How does human gait differ between age groups and sexes?</h3>
-          <p class="home__card-meta">Under review &middot; npj Aging</p>
-          <p class="home__card-note">Characterizing how walking patterns vary across age and between sexes.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/gait-age-sex-differences/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
-          <p class="home__card-meta">Quantifying Human Movement</p>
-          <p class="home__card-note">Better metrics to quantify human movement, using the Maximum Lyapunov Exponent (MLE).</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How can we better leverage AI for national security?</h3>
-          <p class="home__card-meta">AI Development Officer &middot; R.O.K. Navy</p>
-          <p class="home__card-note">The Navy's first AI development specialist. Projects are classified, but broadly involved customized LLMs and object detection in computer vision.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/navy-ai-officer/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">How can we solve the data imbalance problem in training datasets?</h3>
-          <p class="home__card-meta">Intern &middot; Vision AI Lab, NCSOFT</p>
-          <p class="home__card-note">Recognition Team &mdash; generating rare human facial expressions to balance datasets.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/facial-image-generation-ncsoft/">detail</a>
-        </div>
-      </article>
-
-      <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
-        <div class="home__card-body">
-          <h3 class="home__card-title">Can we digitalize the whole process of dental service with AI?</h3>
-          <p class="home__card-meta">AI Engineer &middot; Quve Seventeen</p>
-          <p class="home__card-note">AI Team &mdash; digitalizing the end-to-end dental service pipeline.</p>
-          <a class="home__card-link" href="{{ base_path }}/projects/dental-ai-quve/">detail</a>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="home__more">
-      <a class="home__more-link" href="{{ base_path }}/projects/">View all projects</a>
-    </div>
   </section>
 
   <!-- ================= PROFESSIONAL SKILLS ================= -->
