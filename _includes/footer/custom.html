@@ -16,4 +16,20 @@
     await mermaid.run({querySelector:'code.language-mermaid'});
 </script>
 
+<!-- Keep looping project videos playing even if the browser throttles them -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var vids = document.querySelectorAll('.project video[loop]');
+  if (!vids.length) return;
+  function resume(v) { if (v.paused && !v.ended) { v.play().catch(function () {}); } }
+  vids.forEach(function (v) {
+    v.addEventListener('pause', function () { resume(v); });
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) { vids.forEach(resume); }
+  });
+  setInterval(function () { vids.forEach(resume); }, 3000);
+});
+</script>
+
 <!-- end custom footer snippets -->
