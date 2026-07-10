@@ -56,7 +56,7 @@ redirect_from:
       </article>
 
       <article class="home__card">
-        <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
+        <img class="home__card-thumb" src="{{ base_path }}/images/to-be-updated.png" alt="" />
         <div class="home__card-body">
           <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
           <p class="home__card-meta">Published in &ldquo;Chaos, Solitons &amp; Fractals&rdquo; and &ldquo;Royal Society Open Science&rdquo;</p>

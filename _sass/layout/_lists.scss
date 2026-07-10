@@ -1,20 +1,27 @@
 /* ==========================================================================
    LISTS
-   Plain, non-clickable publication list.
+   Plain, non-numbered publication list; titles link to their DOI.
    ========================================================================== */
 
 .publication-list {
   margin: 1.5em 0 0;
-  padding-left: 1.4em;
 
   &__item {
     margin-bottom: 1.2em;
     line-height: 1.55;
-  }
 
-  &__title {
-    display: block;
-    font-weight: 700;
+    // Nested selector beats the theme's underlined `.page__content a`.
+    .publication-list__title {
+      display: block;
+      color: inherit;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--global-link-color);
+        text-decoration: underline;
+      }
+    }
   }
 
   &__authors {
