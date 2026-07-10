@@ -5,32 +5,30 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">my Google Scholar profile</a>.</div>
 {% endif %}
 
+<ol class="publication-list">
 
+  <li class="publication-list__item">
+    <span class="publication-list__title">Sex-Specific Variance in Gait Biomechanics: Machine Learning-Based Feature Prioritization for Personalized Assessment.</span>
+    <span class="publication-list__authors">H. J. Joung, S. B. Panday, J. H. Lee, J. Ahn, M. S. Park.</span>
+    <span class="publication-list__venue"><em>Sex- and Gender-Specific Biomedicine</em>, 1(1), 64&ndash;73, 2026.</span>
+  </li>
 
+  <li class="publication-list__item">
+    <span class="publication-list__title">Effects of the kinematic variable, time delay and data length on test&ndash;retest reliability of the maximal Lyapunov exponent of human walking.</span>
+    <span class="publication-list__authors">I. Park, J. H. Lee, J. Ahn.</span>
+    <span class="publication-list__venue"><em>Royal Society Open Science</em>, 11(10), 240333, 2024.</span>
+  </li>
+
+  <li class="publication-list__item">
+    <span class="publication-list__title">Noise-robust estimation of the maximal Lyapunov exponent based on state space reconstruction with principal components.</span>
+    <span class="publication-list__authors">J. H. Lee, I. S. Park, J. Ahn.</span>
+    <span class="publication-list__venue"><em>Chaos, Solitons &amp; Fractals</em>, 174, 113916, 2023.</span>
+  </li>
+
+</ol>

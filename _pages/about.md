@@ -17,6 +17,7 @@ redirect_from:
       <p>I am a master's student in the <a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a> at Seoul National University, advised by Professor <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a>.</p>
       <p>My research goal is to build a <strong>digital clone of the human motor controller</strong>.</p>
       <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and controller design for exoskeletons or any other system that physically interacts with the human body.</p>
+      <p>To get there, I believe a deep understanding of the human body has to come first. Beyond biomechanics, I actively study neuroscience and physiology, drawing on that knowledge and building it on top of state-of-the-art methods. My work ranges from classical mathematical modeling to reinforcement-learning-based musculoskeletal simulation, alongside hands-on biomechanics experiments, and I am also deeply interested in exoskeletons.</p>
     </div>
 
     <div class="home__keywords">
@@ -58,7 +59,7 @@ redirect_from:
         <img class="home__card-thumb" src="{{ base_path }}/images/500x300.png" alt="" />
         <div class="home__card-body">
           <h3 class="home__card-title">How can we better estimate the dynamic stability of human gait?</h3>
-          <p class="home__card-meta">Published in Chaos, Solitons &amp; Fractals and Royal Society Open Science</p>
+          <p class="home__card-meta">Published in &ldquo;Chaos, Solitons &amp; Fractals&rdquo; and &ldquo;Royal Society Open Science&rdquo;</p>
           <p class="home__card-note">Developed a new algorithm that resolves practical issues in the Maximal Lyapunov Exponent, and identified the optimal settings for the existing algorithm.</p>
           <a class="home__card-link" href="{{ base_path }}/projects/gait-dynamic-stability/">detail</a>
         </div>

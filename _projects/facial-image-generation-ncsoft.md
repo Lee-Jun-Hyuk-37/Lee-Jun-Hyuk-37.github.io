@@ -1,15 +1,11 @@
 ---
 title: "How can we solve the data imbalance problem in training datasets?"
-excerpt: "Generating large amounts of rare human facial expressions to balance training datasets.<br/><img src='/images/500x300.png'>"
+excerpt: "Generating large amounts of rare human facial expressions to balance training datasets.<br/><img src='/images/to-be-updated.png'>"
 collection: projects
 category: industry
-date: 2022-07-01
+date: 2023-02-28
 header:
-  teaser: /images/500x300.png
+  teaser: /images/to-be-updated.png
 ---
 
-*Placeholder — detailed write-up coming soon.*
-
-**Role:** Intern, Recognition Team, Vision AI Lab, NCSOFT.
-
-Worked on generating a vast amount of human facial images — including rare expressions — to address the data imbalance problem in training datasets.
+*To be updated.*
