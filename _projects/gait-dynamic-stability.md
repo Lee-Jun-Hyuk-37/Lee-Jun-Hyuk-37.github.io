@@ -1,11 +1,11 @@
 ---
 title: "How can we better estimate the dynamic stability of human gait?"
-excerpt: "Quantifying the dynamic stability of human gait with the Maximal Lyapunov Exponent (MLE).<br/><img src='/images/mle/thumbnail.png'>"
+excerpt: "Quantifying the dynamic stability of human gait with the Maximal Lyapunov Exponent (MLE).<br/><img src='/images/mle/chaos.png'>"
 collection: projects
 category: research
 date: 2024-01-01
 header:
-  teaser: /images/mle/thumbnail.png
+  teaser: /images/mle/chaos.png
 ---
 
 {% include base_path %}
@@ -13,9 +13,9 @@ header:
 <div class="project">
 
   <!-- ================= THUMBNAIL ================= -->
-  <!-- Drop the representative image at /images/mle/thumbnail.png -->
+  <!-- Drop the representative image at /images/mle/chaos.png -->
   <div class="project__hero">
-    <img class="project__hero-media" src="{{ base_path }}/images/mle/thumbnail.png" alt="Quantifying the dynamic stability of human gait" />
+    <img class="project__hero-media" src="{{ base_path }}/images/mle/chaos.png" alt="The Lorenz attractor, the iconic butterfly-shaped portrait of a chaotic system" />
   </div>
 
   <h1 class="project__title">How can we better estimate the dynamic stability of human gait?</h1>
@@ -36,6 +36,8 @@ header:
     <h2 class="project__heading">What the MLE measures</h2>
 
     <p>The MLE comes from nonlinear dynamics, where it quantifies a dynamical system's <strong>sensitive dependence on initial conditions (SDIC)</strong>. If tiny differences in the initial condition grow into large divergences over time, the system has strong SDIC and a high MLE, meaning it is <em>unstable</em>.</p>
+
+    <p>This idea is popularly known as the <strong>butterfly effect</strong>: the poetic image that a butterfly flapping its wings could set off a chain of events that eventually changes a distant storm. Systems that behave this way are called <strong>chaotic</strong>, and the figure at the top of this page is the <em>Lorenz attractor</em>, the most iconic portrait of such a chaotic system.</p>
 
     <p>An intuitive gait analogy: when an older adult steps on a small pebble while walking (a tiny perturbation), the system can evolve into a large deviation, drifting away from the normal walking pattern and, in the worst case, leading to a fall. SDIC is high, and so is the MLE. A healthy young adult, by contrast, can step on the same pebble and keep walking in essentially the same pattern, barely distinguishable from before. SDIC is low, and the MLE is relatively low.</p>
   </section>
