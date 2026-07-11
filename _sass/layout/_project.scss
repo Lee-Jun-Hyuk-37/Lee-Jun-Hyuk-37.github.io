@@ -83,6 +83,23 @@
     font-size: $type-size-6;
   }
 
+  /* Company logo shown as a small chip; the white backing keeps the
+     light-background wordmark legible in both light and dark themes. */
+  &__logo {
+    display: inline-block;
+    margin: 1.1em 0 0.2em;
+    padding: 0.25em 0.4em;
+    background: #ffffff;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+
+    img {
+      display: block;
+      height: 64px;
+      width: auto;
+    }
+  }
+
   /* --- Sections ------------------------------------------------------- */
   &__section {
     margin-top: 2.5em;

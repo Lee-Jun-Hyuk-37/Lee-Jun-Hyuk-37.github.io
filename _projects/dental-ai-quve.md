@@ -15,6 +15,9 @@ header:
   <!-- ================= TITLE ================= -->
   <h1 class="project__title">Can we reconstruct a patient's 3D oral structure from CT scans alone?</h1>
   <p class="project__affil">AI Engineer &middot; AI Team &middot; Quve Seventeen</p>
+  <div class="project__logo">
+    <img src="{{ base_path }}/images/quve_seventeen/logo.png" alt="Quve Seventeen logo" />
+  </div>
 
   <!-- ================= OVERVIEW ================= -->
   <section class="project__section">
