@@ -95,9 +95,15 @@
 
     img {
       display: block;
-      height: 64px;
+      height: 160px;
       width: auto;
     }
+  }
+
+  /* Emblem-style logos fill their frame, so they need less height than the
+     wordmark logos, which carry generous internal whitespace. */
+  &__logo--emblem img {
+    height: 120px;
   }
 
   /* --- Sections ------------------------------------------------------- */
@@ -164,6 +170,50 @@
   /* A wide figure for detailed diagrams that need the full column width */
   &__figure--wide {
     max-width: 100%;
+  }
+
+  /* A portrait figure: caps the width so tall photos do not dominate */
+  &__figure--portrait {
+    max-width: 300px;
+  }
+
+  /* --- Split: body text alongside a portrait image ------------------- */
+  &__split {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em 1.75em;
+
+    @include breakpoint($small) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__split-text {
+    flex: 1 1 auto;
+    min-width: 0;
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__split-media {
+    flex: 0 0 auto;
+    margin: 0;
+    text-align: center;
+
+    @include breakpoint($small) {
+      width: 280px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--global-border-color);
+      border-radius: $border-radius;
+    }
   }
 
   /* Caption for a full-width media strip (outside a <figure>) */
