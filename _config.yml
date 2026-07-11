@@ -23,7 +23,7 @@ repository               : "Lee-Jun-Hyuk-37/Lee-Jun-Hyuk-37.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile1.png"
   name             : "Jun Hyuk Lee"
   pronouns         : # example: "she/her"
   bio              : "Master's Student<br/>Sports Engineering Lab<br/>Seoul National University"
