@@ -111,11 +111,24 @@ html[data-theme="dark"] .home {
   }
 
   &__list-head {
+    // Mobile-first: stack the date under the title, both left-aligned, so
+    // every entry looks the same on narrow screens. Previously the row would
+    // wrap inconsistently — long titles pushed the date to a left-aligned
+    // second line while short titles kept it right-aligned on the first line.
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.2em 1em;
+    flex-direction: column;
+    gap: 0.15em;
+
+    // From the medium breakpoint up, the column is wide enough to hold even
+    // the longest title and its date on a single line, so place them at
+    // opposite ends (the clean desktop look).
+    @include breakpoint($medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.2em 1em;
+    }
   }
 
   &__list-title {
