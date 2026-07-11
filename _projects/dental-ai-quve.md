@@ -14,7 +14,7 @@ header:
 
   <!-- ================= TITLE ================= -->
   <h1 class="project__title">Can we reconstruct a patient's 3D oral structure from CT scans alone?</h1>
-  <p class="project__affil">Quve Seventeen &middot; AI Team</p>
+  <p class="project__affil">AI Engineer &middot; AI Team &middot; Quve Seventeen</p>
 
   <!-- ================= OVERVIEW ================= -->
   <section class="project__section">
