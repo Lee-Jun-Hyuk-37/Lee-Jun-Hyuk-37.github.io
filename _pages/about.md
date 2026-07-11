@@ -114,7 +114,7 @@ redirect_from:
         </div>
         <p class="home__list-sub">AI Development Specialist &middot; Naval Intelligence Information System Group &amp; Head Quarter Battalion</p>
         <p class="home__list-desc">As the Navy's first AI development specialist, I worked to better leverage AI for national defense.</p>
-        <a class="home__detail-link" href="{{ base_path }}/projects/navy-ai-officer/">details</a>
+        <a class="home__detail-link" href="{{ base_path }}/projects/navy-ai-dev-specialist/">details</a>
       </li>
 
       <li class="home__list-item">
