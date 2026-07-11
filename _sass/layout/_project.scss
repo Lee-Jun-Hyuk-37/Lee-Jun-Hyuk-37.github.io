@@ -175,6 +175,17 @@
       line-height: 1.55;
     }
   }
+
+  /* An inline citation set off from the surrounding text */
+  &__ref-inline {
+    margin: 0.75em 0 1.5em;
+    padding: 0.75em 1em;
+    border-left: 3px solid var(--global-link-color);
+    border-radius: 0 $border-radius $border-radius 0;
+    background: color-mix(in srgb, var(--global-link-color) 6%, transparent);
+    font-size: $type-size-6;
+    line-height: 1.55;
+  }
 }
 
 /* Dark-mode muted override */
