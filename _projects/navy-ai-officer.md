@@ -15,7 +15,7 @@ header:
   <!-- ================= TITLE ================= -->
   <h1 class="project__title">How can we better leverage AI for national defense?</h1>
   <p class="project__affil">AI Development Specialist &middot; Naval Intelligence Information System Group &middot; Republic of Korea Navy</p>
-  <div class="project__logo project__logo--emblem">
+  <div class="project__logo">
     <img src="{{ base_path }}/images/rokn/logo.png" alt="Republic of Korea Navy emblem" />
   </div>
 

@@ -100,12 +100,6 @@
     }
   }
 
-  /* Emblem-style logos fill their frame, so they need less height than the
-     wordmark logos, which carry generous internal whitespace. */
-  &__logo--emblem img {
-    height: 120px;
-  }
-
   /* --- Sections ------------------------------------------------------- */
   &__section {
     margin-top: 2.5em;
@@ -304,18 +298,40 @@ html[data-theme="dark"] .project {
   --project-muted: #b9bdc1;
 }
 
+/* Project list thumbnails.
+   Every excerpt image is kept within one uniform box so the list reads
+   consistently. Images scale to fit and are never cropped: portrait photos
+   end up narrow, wide diagrams stay bounded in width. */
+$proj-thumb-max-width: 360px;
+$proj-thumb-max-height: 200px;
+
+/* Markdownify wraps each excerpt in its own <p>, which the browser splits out
+   of the .archive__item-excerpt paragraph, so target the excerpt image by its
+   position inside the item instead. */
+.archive__item p img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: $proj-thumb-max-width;
+  max-height: $proj-thumb-max-height;
+  margin-top: 0.5em;
+}
+
 /* Four-clip thumbnail strip used inside a project's list excerpt.
    Each clip keeps its own aspect ratio; leftover space is left empty. */
 .proj-thumb {
   display: flex;
-  max-width: 480px;
+  max-width: $proj-thumb-max-width;
+  max-height: $proj-thumb-max-height;
   margin-top: 0.5em;
 
   video {
     flex: 1 1 0;
     min-width: 0;
     width: 25%;
+    max-height: $proj-thumb-max-height;
     height: auto;
     display: block;
+    object-fit: contain;
   }
 }
