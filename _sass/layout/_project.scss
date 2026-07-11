@@ -153,6 +153,45 @@
     text-align: center;
   }
 
+  /* --- Pipeline: a row of steps shown left to right ------------------- */
+  &__pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin: 1.5em 0;
+  }
+
+  &__pipeline-step {
+    // Stacked on narrow screens; three across from the medium breakpoint up.
+    flex: 1 1 100%;
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+
+    @include breakpoint($small) {
+      flex: 1 1 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin: 0 auto;
+      border: 1px solid var(--global-border-color);
+      border-radius: $border-radius;
+      background: var(--global-base-color);
+    }
+
+    figcaption {
+      margin-top: 0.6em;
+      color: var(--project-muted);
+      font-size: $type-size-6;
+      line-height: 1.5;
+    }
+  }
+
   /* --- Equation ------------------------------------------------------- */
   &__equation {
     margin: 1.5em 0;
