@@ -36,6 +36,11 @@ header:
       <img src="{{ base_path }}/images/ncsoft/figure.png" alt="Pipeline: an expression image and a style image are each reconstructed into a 3D FLAME face by EMOCA, combined in FLAME control, and rendered by DaGAN into a realistic output face" />
       <figcaption>The generation pipeline: EMOCA reconstructs the expression and identity images into 3D FLAME faces, the expression is transferred in FLAME's control space, and DaGAN renders the result into a realistic face image.</figcaption>
     </figure>
+
+    <figure class="project__figure project__figure--portrait">
+      <img src="{{ base_path }}/images/ncsoft/photo_nc.jpg" alt="Jun Hyuk Lee with teammates at the NCSOFT office" />
+      <figcaption>A moment from my internship at NCSOFT's Vision AI Lab.</figcaption>
+    </figure>
   </section>
 
 </div>
