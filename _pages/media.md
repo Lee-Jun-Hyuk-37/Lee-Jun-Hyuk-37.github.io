@@ -9,7 +9,7 @@ author_profile: true
 
 ## Undergraduate Research {#undergraduate-research}
 
-As an undergraduate, I was the **first author** of a paper introducing a noise-robust algorithm for estimating the maximal Lyapunov exponent, published in *Chaos, Solitons & Fractals* with Il Seung Park and Professor Jooeun Ahn. The work was featured by several Korean news outlets:
+As the first author, I developed a noise-robust algorithm for estimating the maximal Lyapunov exponent, published in *Chaos, Solitons & Fractals* with Il Seung Park and Professor Jooeun Ahn. The work was featured by several Korean news outlets:
 
 <ul class="media-list">
   <li><a href="https://www.chosun.com/national/national_general/2023/08/25/OL7GF3CETBANTAJQWSY4ZMYANE/" target="_blank" rel="noopener noreferrer">Chosun Ilbo</a></li>
