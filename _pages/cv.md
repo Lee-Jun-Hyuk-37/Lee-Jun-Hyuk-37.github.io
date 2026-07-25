@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-<p><em>To be updated.</em></p>
+<p><a href="{{ base_path }}/files/CV_JunHyuk_Lee.pdf" class="btn btn--primary" target="_blank" rel="noopener">Download CV (PDF)</a></p>
