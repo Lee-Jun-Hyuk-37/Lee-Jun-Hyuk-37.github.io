@@ -38,22 +38,32 @@ header:
 
           <div class="publication-link-row has-text-centered">
             <div class="publication-links">
+              <!-- arXiv (active; replace # with the arXiv URL once available) -->
               <span class="link-block">
                 <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Paper: not released yet -->
+              <span class="link-block">
+                <span class="button is-normal is-rounded is-tba">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
+                  <span>Paper (TBA)</span>
+                </span>
               </span>
+              <!-- Code: not released yet -->
               <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
-                  <span class="icon"><i class="fab fa-youtube"></i></span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                <span class="button is-normal is-rounded is-tba">
                   <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>Code</span>
+                  <span>Code (TBA)</span>
+                </span>
+              </span>
+              <!-- Google Scholar -->
+              <span class="link-block">
+                <a href="https://scholar.google.com/citations?user=BYGxZ0AAAAAJ" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                  <span class="icon"><i class="ai ai-google-scholar"></i></span>
+                  <span>Google Scholar</span>
                 </a>
               </span>
             </div>
