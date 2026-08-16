@@ -16,8 +16,8 @@ header:
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title publication-title">
-            Lambda-Hold Control:<br>
-            <span>Human-Like Movement Emerges from a Minimal Task Reward in Predictive Musculoskeletal Simulation</span>
+            Lambda-Hold Control:
+            <span class="publication-subtitle">Human-Like Movement Emerges from a Minimal Task Reward in Predictive Musculoskeletal Simulation</span>
           </h1>
 
           <div class="publication-authors author-list">

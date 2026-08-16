@@ -31,6 +31,22 @@
       cursor: default;
       pointer-events: none;
     }
+    /* Descriptive second half of the title: smaller, lighter, and muted so the
+       "Lambda-Hold Control:" name stays the focal point. */
+    .publication-title .publication-subtitle {
+      display: block;
+      margin-top: 0.55rem;
+      color: #6a6f76;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    @media screen and (max-width: 768px) {
+      .publication-title .publication-subtitle {
+        margin-top: 0.4rem;
+        font-size: 1.1rem;
+      }
+    }
     /* Neutral stand-in shown wherever a real video/figure will go. */
     .placeholder-media {
       display: flex;
