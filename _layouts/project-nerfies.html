@@ -11,6 +11,17 @@
 
   <style>
     .hr { width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf; }
+    /* ORCID mark keeps its brand green even inside the blue author links. */
+    .author-block .ai-orcid { color: #a6ce39 !important; }
+    .author-block .ai-orcid:hover { color: #8ab029 !important; }
+    /* Long affiliation lines should wrap instead of overflowing on mobile. */
+    .publication-affiliations .author-block { white-space: normal; }
+    .publication-corresponding {
+      margin-top: 0.4rem;
+      color: #4f4f4f;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1rem;
+    }
     /* Neutral stand-in shown wherever a real video/figure will go. */
     .placeholder-media {
       display: flex;

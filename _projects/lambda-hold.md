@@ -1,5 +1,5 @@
 ---
-title: "Lambda Hold"
+title: "Lambda-Hold Control"
 excerpt: "To be updated.<br/><img src='/images/to-be-updated.png'>"
 collection: projects
 category: research
@@ -16,20 +16,24 @@ header:
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title publication-title">
-            Your Project Title Here<br>
-            <span>Optional Subtitle</span>
+            Lambda-Hold Control:<br>
+            <span>Human-Like Movement Emerges from a Minimal Task Reward in Predictive Musculoskeletal Simulation</span>
           </h1>
-          <div class="publication-venue">Venue / Conference (Year)</div>
 
           <div class="publication-authors author-list">
-            <span class="author-block"><a href="#">Author One</a><sup>1</sup></span>
-            <span class="author-block"><a href="#">Author Two</a><sup>1</sup></span>
-            <span class="author-block"><a href="#">Author Three</a><sup>2</sup></span>
+            <span class="author-block">Jun Hyuk Lee <a href="https://orcid.org/0000-0003-3345-5303" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
+            <span class="author-block">Chihyeong Lee <a href="#" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
+            <span class="author-block">Jooeun Ahn <a href="#" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1,2,3,*</sup></span>
           </div>
 
           <div class="publication-authors publication-affiliations">
-            <span class="author-block"><sup>1</sup>Affiliation One</span>
-            <span class="author-block"><sup>2</sup>Affiliation Two</span>
+            <span class="author-block"><sup>1</sup>Department of Physical Education, Seoul National University, Seoul, Republic of Korea</span>
+            <span class="author-block"><sup>2</sup>Institute of Sport Science, Seoul National University, Seoul, Republic of Korea</span>
+            <span class="author-block"><sup>3</sup>SNU Robotics Institute, Seoul National University, Seoul, Republic of Korea</span>
+          </div>
+
+          <div class="publication-authors publication-corresponding">
+            <span class="author-block">*Corresponding author: <a href="mailto:ahnjooeun@snu.ac.kr">ahnjooeun@snu.ac.kr</a></span>
           </div>
 
           <div class="publication-link-row has-text-centered">
