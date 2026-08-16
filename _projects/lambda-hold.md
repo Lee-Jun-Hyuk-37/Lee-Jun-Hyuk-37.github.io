@@ -45,10 +45,10 @@ header:
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Paper: not released yet -->
+              <!-- Paper: journal DOI, not released yet -->
               <span class="link-block">
                 <span class="button is-normal is-rounded is-tba">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span class="icon"><i class="ai ai-doi"></i></span>
                   <span>Paper (TBA)</span>
                 </span>
               </span>
@@ -58,13 +58,6 @@ header:
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code (TBA)</span>
                 </span>
-              </span>
-              <!-- Google Scholar -->
-              <span class="link-block">
-                <a href="https://scholar.google.com/citations?user=BYGxZ0AAAAAJ" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
-                  <span class="icon"><i class="ai ai-google-scholar"></i></span>
-                  <span>Google Scholar</span>
-                </a>
               </span>
             </div>
           </div>
