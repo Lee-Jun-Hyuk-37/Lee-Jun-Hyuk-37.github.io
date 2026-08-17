@@ -21,9 +21,9 @@ header:
           </h1>
 
           <div class="publication-authors author-list">
-            <span class="author-block">Jun Hyuk Lee <a href="https://orcid.org/0000-0003-3345-5303" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
-            <span class="author-block">Chihyeong Lee <a href="#" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
-            <span class="author-block">Jooeun Ahn <a href="#" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1,2,3,*</sup></span>
+            <span class="author-block"><a class="author-name" href="{{ '/' | relative_url }}">Jun Hyuk Lee</a> <a href="https://orcid.org/0000-0003-3345-5303" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
+            <span class="author-block"><a class="author-name" href="https://27bro.github.io/" target="_blank" rel="noopener noreferrer">Chihyeong Lee</a> <a href="https://orcid.org/0009-0002-4335-9825" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
+            <span class="author-block"><a class="author-name" href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a> <a href="https://orcid.org/0000-0002-7964-5148" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1,2,3,*</sup></span>
           </div>
 
           <div class="publication-authors publication-affiliations">
@@ -95,16 +95,43 @@ header:
   </div>
 </section>
 
-<!-- ================= RESULT / METHOD SECTIONS ================= -->
+<!-- ================= OVERVIEW ================= -->
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Overview placeholder. Briefly introduce the Lambda-Hold controller here, then
+            let the figure below carry the core intuition of the method.
+          </p>
+        </div>
+        <div style="padding: 6px;"></div>
+        <div class="columns is-centered">
+          <div class="placeholder-media" style="width: 90%;">Overview figure placeholder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS & COMPARISONS ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results &amp; Comparisons</h2>
+      </div>
+    </div>
+
     <div class="hr"></div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h3 class="title is-3">Section heading placeholder</h3>
-        <div style="padding: 12px;"></div>
+        <h3 class="title is-4">Lambda-Hold (ours)</h3>
+        <div style="padding: 8px;"></div>
         <div class="columns is-centered">
-          <div class="placeholder-media" style="width: 90%;">Result video placeholder</div>
+          <div class="placeholder-media" style="width: 100%;">Result video placeholder</div>
         </div>
       </div>
     </div>
@@ -112,10 +139,10 @@ header:
     <div class="hr"></div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h3 class="title is-3">Another section heading placeholder</h3>
-        <div style="padding: 12px;"></div>
+        <h3 class="title is-4">Baseline comparison</h3>
+        <div style="padding: 8px;"></div>
         <div class="columns is-centered">
-          <div class="placeholder-media" style="width: 100%;">Result video placeholder</div>
+          <div class="placeholder-media" style="width: 100%;">Baseline video placeholder</div>
         </div>
       </div>
     </div>

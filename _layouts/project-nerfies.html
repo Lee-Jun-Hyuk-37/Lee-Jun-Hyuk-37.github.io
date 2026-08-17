@@ -47,6 +47,23 @@
         font-size: 1.1rem;
       }
     }
+    /* Keep every link button on the same baseline. The template only margins
+       <a> buttons, so the non-clickable (span) TBA buttons would otherwise sit
+       higher than the active ones. */
+    .publication-links { align-items: center; }
+    .publication-links .link-block .button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    /* Author names link to personal homepages but keep the dark title color
+       (underline on hover) instead of the blue used for the ORCID/DOI links. */
+    .publication-authors a.author-name {
+      color: #363636 !important;
+      text-decoration: none;
+    }
+    .publication-authors a.author-name:hover {
+      text-decoration: underline;
+    }
     /* Neutral stand-in shown wherever a real video/figure will go. */
     .placeholder-media {
       display: flex;
