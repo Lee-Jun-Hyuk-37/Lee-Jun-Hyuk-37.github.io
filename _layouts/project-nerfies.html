@@ -117,6 +117,7 @@
     .teaser-strip video {
       width: 100%;
       height: auto;
+      aspect-ratio: 64 / 85;
       display: block;
       border-radius: 6px;
     }
@@ -156,15 +157,28 @@
       padding-right: 0.3rem;
       line-height: 1.2;
     }
-    .pg-method .pg-ours { color: hsl(204, 86%, 45%); }
+    .pg-ours { color: hsl(204, 86%, 45%); }
     .pg-cell { line-height: 0; }
     .pg-cell video {
       display: block;
       width: 100%;
       height: auto;
+      aspect-ratio: 64 / 85;
       border-radius: 8px;
       border: 1px solid #e6e6e6;
     }
+    /* Light-blue box drawn behind the Ours column (header + its three clips). */
+    .pg-highlight {
+      grid-column: 2;
+      grid-row: 1 / 5;
+      align-self: stretch;
+      margin: -6px;
+      background: rgba(56, 132, 236, 0.10);
+      border: 1.5px solid rgba(56, 132, 236, 0.45);
+      border-radius: 10px;
+      z-index: 0;
+    }
+    .pg-method, .pg-stage, .pg-cell { position: relative; z-index: 1; }
     /* Best-baseline pair (two views side by side). */
     .baseline-duo {
       display: flex;
@@ -173,7 +187,31 @@
       gap: 0.9rem;
     }
     .baseline-duo .media-frame { flex: 0 1 300px; }
-    .baseline-duo video { display: block; width: 100%; height: auto; }
+    .baseline-duo video { display: block; width: 100%; height: auto; aspect-ratio: 64 / 85; }
+    /* Ours-vs-baseline head-to-head: two labelled groups of clips. */
+    .baseline-compare {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.4rem 2.2rem;
+    }
+    .bc-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: #2f2f2f;
+    }
+    .baseline-compare .media-frame { flex: 0 1 190px; }
+    .bc-note {
+      max-width: 760px;
+      margin: 1.3rem auto 0;
+      color: #4f4f4f;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
     /* Neutral stand-in shown wherever a real video/figure will go. */
     .placeholder-media {
       display: flex;
@@ -230,23 +268,78 @@
   </div>
 </footer>
 
-<!-- Play only the clips currently on screen; pausing off-screen ones keeps the
-     browser from throttling many simultaneous videos. -->
+<!-- Video playback manager: play only on-screen clips, and self-heal any clip
+     that errors or freezes. The local dev server (WEBrick) can drop a byte-range
+     request when many clips load at once, which surfaces as a "data source
+     error"; a staggered reload almost always recovers it. -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  var vids = document.querySelectorAll('video[loop]');
+  var vids = [].slice.call(document.querySelectorAll('video[loop]'));
   if (!vids.length) return;
-  function tryPlay(v) { v.play().catch(function () {}); }
+
+  function onScreen(v) {
+    var r = v.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    return r.bottom > 0 && r.top < vh && r.right > 0 && r.left < vw;
+  }
+  function tryPlay(v) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
+
+  // Reload + replay a clip that failed or stalled, backing off and jittering so
+  // retries don't all hit the server at the same instant.
+  function recover(v) {
+    if (v.__recovering) return;
+    var n = v.__tries || 0;
+    if (n > 24) return;
+    v.__tries = n + 1;
+    v.__recovering = true;
+    var delay = 250 + Math.min(n, 8) * 350 + Math.random() * 300;
+    setTimeout(function () {
+      v.__recovering = false;
+      if (!onScreen(v)) return;
+      try { v.load(); } catch (e) {}
+      tryPlay(v);
+    }, delay);
+  }
+
+  vids.forEach(function (v) {
+    v.addEventListener('error', function () { recover(v); });
+    var s = v.querySelector('source');
+    if (s) { s.addEventListener('error', function () { recover(v); }); }
+    v.addEventListener('stalled', function () { if (onScreen(v)) { recover(v); } });
+    v.addEventListener('pause', function () { if (!v.ended && onScreen(v)) { tryPlay(v); } });
+    v.addEventListener('playing', function () { v.__tries = 0; });
+  });
+
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { tryPlay(e.target); } else { e.target.pause(); }
+        if (e.isIntersecting) {
+          if (e.target.error) { recover(e.target); } else { tryPlay(e.target); }
+        } else {
+          e.target.pause();
+        }
       });
     }, { threshold: 0.1 });
     vids.forEach(function (v) { io.observe(v); });
   } else {
     vids.forEach(tryPlay);
   }
+
+  // Safety net: every few seconds, nudge any on-screen clip that is stuck.
+  var lastTime = {};
+  var id = 0;
+  vids.forEach(function (v) { v.__id = ++id; });
+  setInterval(function () {
+    vids.forEach(function (v) {
+      if (!onScreen(v)) return;
+      if (v.error) { recover(v); return; }
+      var t = v.currentTime;
+      if (v.paused) { tryPlay(v); }
+      else if (lastTime[v.__id] === t && v.readyState >= 1) { recover(v); }
+      lastTime[v.__id] = t;
+    });
+  }, 3000);
 });
 </script>
 

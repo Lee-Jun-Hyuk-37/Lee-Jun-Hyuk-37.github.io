@@ -121,18 +121,37 @@ header:
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Best baseline: DEP-RL</h2>
+        <h2 class="title is-3">Ours vs. best baseline (DEP-RL)</h2>
         <div style="padding: 8px;"></div>
-        <div class="baseline-duo">
-          <div class="media-frame">
-            <video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/baseline_best.mp4' | relative_url }}" type="video/mp4"></video>
-            <span class="media-label">Sagittal</span>
+        <div class="baseline-compare">
+          <div>
+            <div class="bc-title"><span class="pg-ours">&lambda;-hold (Ours)</span></div>
+            <div class="baseline-duo">
+              <div class="media-frame">
+                <video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold.mp4' | relative_url }}" type="video/mp4"></video>
+                <span class="media-label">Sagittal</span>
+              </div>
+              <div class="media-frame">
+                <video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold_frontal.mp4' | relative_url }}" type="video/mp4"></video>
+                <span class="media-label">Frontal</span>
+              </div>
+            </div>
           </div>
-          <div class="media-frame">
-            <video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/baseline_best_frontal.mp4' | relative_url }}" type="video/mp4"></video>
-            <span class="media-label">Frontal</span>
+          <div>
+            <div class="bc-title">DEP-RL (best baseline)</div>
+            <div class="baseline-duo">
+              <div class="media-frame">
+                <video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/baseline_best.mp4' | relative_url }}" type="video/mp4"></video>
+                <span class="media-label">Sagittal</span>
+              </div>
+              <div class="media-frame">
+                <video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/baseline_best_frontal.mp4' | relative_url }}" type="video/mp4"></video>
+                <span class="media-label">Frontal</span>
+              </div>
+            </div>
           </div>
         </div>
+        <p class="bc-note">Both controllers were trained for the same 150M simulation steps. Yet reaching that same number of steps takes our &lambda;-hold controller far less wall-clock time than DEP-RL.</p>
       </div>
     </div>
   </div>
@@ -154,37 +173,39 @@ header:
         <div style="padding: 8px;"></div>
         <div class="progress-grid-wrap">
           <div class="progress-grid">
-            <!-- header: methods across the top -->
+            <!-- Highlight box behind the Ours column -->
+            <div class="pg-highlight"></div>
+
+            <!-- Ours column (explicitly placed so the highlight sits behind it) -->
+            <div class="pg-method" style="grid-column: 2; grid-row: 1;"><span class="pg-ours">&lambda;-hold (Ours)</span></div>
+            <div class="pg-cell" style="grid-column: 2; grid-row: 2;"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold_early.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell" style="grid-column: 2; grid-row: 3;"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell" style="grid-column: 2; grid-row: 4;"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold.mp4' | relative_url }}" type="video/mp4"></video></div>
+
+            <!-- Remaining cells auto-flow around the Ours column -->
             <div></div>
-            <div class="pg-method"><span class="pg-ours">&lambda;-hold (Ours)</span></div>
             <div class="pg-method">Plain SAC</div>
             <div class="pg-method">Excitation-Hold</div>
             <div class="pg-method">DEP-RL</div>
             <div class="pg-method">Synergy</div>
 
-            <!-- Start of training -->
             <div class="pg-stage">Start of training</div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold_early.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/plainSAC_early.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/exc-hold_early.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/deprl_early.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/synergy_early.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/plainSAC_early.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/exc-hold_early.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/deprl_early.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/synergy_early.mp4' | relative_url }}" type="video/mp4"></video></div>
 
-            <!-- 75M simulation steps -->
-            <div class="pg-stage">75M simulation steps</div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/plainSAC_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/exc-hold_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/deprl_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/synergy_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-stage">75M<br>simulation steps</div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/plainSAC_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/exc-hold_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/deprl_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/synergy_mid.mp4' | relative_url }}" type="video/mp4"></video></div>
 
-            <!-- 150M simulation steps -->
-            <div class="pg-stage">150M simulation steps</div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/plainSAC_final.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/exc-hold_final.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/deprl_final.mp4' | relative_url }}" type="video/mp4"></video></div>
-            <div class="pg-cell"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/synergy_final.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-stage">150M<br>simulation steps</div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/plainSAC_final.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/exc-hold_final.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/deprl_final.mp4' | relative_url }}" type="video/mp4"></video></div>
+            <div class="pg-cell"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/synergy_final.mp4' | relative_url }}" type="video/mp4"></video></div>
           </div>
         </div>
       </div>
