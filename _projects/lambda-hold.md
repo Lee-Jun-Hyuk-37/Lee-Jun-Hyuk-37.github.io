@@ -71,10 +71,10 @@ header:
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="teaser-strip">
-      <div class="media-frame"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold.mp4' | relative_url }}" type="video/mp4"></video></div>
-      <div class="media-frame"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold_slow.mp4' | relative_url }}" type="video/mp4"></video><span class="media-label">slow (&times;1/4)</span></div>
-      <div class="media-frame"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold_frontal.mp4' | relative_url }}" type="video/mp4"></video></div>
-      <div class="media-frame"><video loop muted playsinline preload="metadata"><source src="{{ '/images/lambda-hold/lambda-hold_frontal_slow.mp4' | relative_url }}" type="video/mp4"></video><span class="media-label">slow (&times;1/4)</span></div>
+      <div class="media-frame"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold.mp4' | relative_url }}" type="video/mp4"></video></div>
+      <div class="media-frame"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold_slow.mp4' | relative_url }}" type="video/mp4"></video><span class="media-label">slow (&times;1/4)</span></div>
+      <div class="media-frame"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold_frontal.mp4' | relative_url }}" type="video/mp4"></video></div>
+      <div class="media-frame"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold_frontal_slow.mp4' | relative_url }}" type="video/mp4"></video><span class="media-label">slow (&times;1/4)</span></div>
     </div>
   </div>
 </section>
@@ -151,7 +151,7 @@ header:
             </div>
           </div>
         </div>
-        <p class="bc-note">Both controllers were trained for the same 150M simulation steps. Yet reaching that same number of steps takes our &lambda;-hold controller far less wall-clock time than DEP-RL.</p>
+        <p class="bc-note">Both controllers were trained for the same 150M simulation steps. Our &lambda;-hold controller, however, reaches that same number of simulation steps in far less wall-clock time than DEP-RL.</p>
       </div>
     </div>
   </div>
@@ -169,7 +169,6 @@ header:
     <div class="hr"></div>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h3 class="title is-4">Training progression</h3>
         <div style="padding: 8px;"></div>
         <div class="progress-grid-wrap">
           <div class="progress-grid">
@@ -183,7 +182,7 @@ header:
             <div class="pg-cell" style="grid-column: 2; grid-row: 4;"><video loop muted playsinline preload="none"><source src="{{ '/images/lambda-hold/lambda-hold.mp4' | relative_url }}" type="video/mp4"></video></div>
 
             <!-- Remaining cells auto-flow around the Ours column -->
-            <div></div>
+            <div class="pg-corner">Training progression</div>
             <div class="pg-method">Plain SAC</div>
             <div class="pg-method">Excitation-Hold</div>
             <div class="pg-method">DEP-RL</div>

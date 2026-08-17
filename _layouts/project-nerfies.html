@@ -22,6 +22,8 @@
       font-family: 'Google Sans', sans-serif;
       font-size: 1rem;
     }
+    /* Slightly smaller affiliation lines (overrides the template's 1.15rem). */
+    .publication-authors.publication-affiliations { font-size: 1.02rem; }
     /* "To Be Announced" buttons: greyed out and non-clickable until the
        real link is available. */
     .publication-links .button.is-tba {
@@ -127,16 +129,24 @@
       padding: 0.14rem 0.5rem;
       font-size: 0.8rem;
     }
-    /* Training-progression comparison grid (method rows x stage columns). */
-    .progress-grid-wrap { overflow-x: auto; }
+    /* Training-progression comparison grid (stage rows x method columns). */
     .progress-grid {
       display: grid;
-      grid-template-columns: minmax(84px, 112px) repeat(5, 1fr);
-      gap: 0.5rem 0.5rem;
+      grid-template-columns: minmax(78px, 104px) repeat(5, 1fr);
+      gap: 0.5rem 0.45rem;
       align-items: center;
-      min-width: 780px;
       margin: 0 auto;
       width: 100%;
+    }
+    /* Top-left label describing the stage column. */
+    .pg-corner {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: #2f2f2f;
+      text-align: right;
+      padding-right: 0.3rem;
+      line-height: 1.2;
     }
     /* Method names are the column headers (top row). */
     .pg-method {
@@ -285,61 +295,65 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function tryPlay(v) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
 
-  // Reload + replay a clip that failed or stalled, backing off and jittering so
-  // retries don't all hit the server at the same instant.
+  // Start clips a little apart so the local dev server isn't hit by every clip
+  // at once (its dropped byte-range requests are what cause playback errors).
+  var queue = [], draining = false;
+  function enqueue(v) {
+    if (queue.indexOf(v) !== -1) return;
+    queue.push(v);
+    if (draining) return;
+    draining = true;
+    (function step() {
+      if (!queue.length) { draining = false; return; }
+      var x = queue.shift();
+      if (onScreen(x) && !x.error) { tryPlay(x); }
+      setTimeout(step, 160);
+    })();
+  }
+
+  // Reload a clip ONLY on a hard media error, and rate-limit it so a flaky clip
+  // can never get stuck in a reload / restart loop.
   function recover(v) {
-    if (v.__recovering) return;
+    var now = new Date().getTime();
+    if (v.__next && now < v.__next) return;
     var n = v.__tries || 0;
-    if (n > 24) return;
+    if (n >= 8) return;                       // stop after several honest tries
     v.__tries = n + 1;
-    v.__recovering = true;
-    var delay = 250 + Math.min(n, 8) * 350 + Math.random() * 300;
-    setTimeout(function () {
-      v.__recovering = false;
-      if (!onScreen(v)) return;
-      try { v.load(); } catch (e) {}
-      tryPlay(v);
-    }, delay);
+    v.__next = now + 2500 + n * 1500;         // grows between reloads
+    if (!onScreen(v)) return;
+    try { v.load(); } catch (e) {}
+    setTimeout(function () { if (onScreen(v) && !v.__offscreen) { tryPlay(v); } }, 90);
   }
 
   vids.forEach(function (v) {
     v.addEventListener('error', function () { recover(v); });
-    var s = v.querySelector('source');
-    if (s) { s.addEventListener('error', function () { recover(v); }); }
-    v.addEventListener('stalled', function () { if (onScreen(v)) { recover(v); } });
-    v.addEventListener('pause', function () { if (!v.ended && onScreen(v)) { tryPlay(v); } });
-    v.addEventListener('playing', function () { v.__tries = 0; });
+    // Resume only if the browser (not our observer) paused an on-screen clip.
+    v.addEventListener('pause', function () {
+      if (!v.ended && !v.__offscreen && onScreen(v)) { enqueue(v); }
+    });
+    // Once a clip has genuinely played for a bit, clear its retry budget.
+    v.addEventListener('timeupdate', function () {
+      if (v.currentTime > 1.5) { v.__tries = 0; }
+    });
   });
 
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
+        var v = e.target;
         if (e.isIntersecting) {
-          if (e.target.error) { recover(e.target); } else { tryPlay(e.target); }
+          v.__offscreen = false;
+          if (v.error) { recover(v); } else { enqueue(v); }
         } else {
-          e.target.pause();
+          v.__offscreen = true;
+          v.pause();
         }
       });
     }, { threshold: 0.1 });
     vids.forEach(function (v) { io.observe(v); });
   } else {
-    vids.forEach(tryPlay);
+    vids.forEach(enqueue);
   }
-
-  // Safety net: every few seconds, nudge any on-screen clip that is stuck.
-  var lastTime = {};
-  var id = 0;
-  vids.forEach(function (v) { v.__id = ++id; });
-  setInterval(function () {
-    vids.forEach(function (v) {
-      if (!onScreen(v)) return;
-      if (v.error) { recover(v); return; }
-      var t = v.currentTime;
-      if (v.paused) { tryPlay(v); }
-      else if (lastTime[v.__id] === t && v.readyState >= 1) { recover(v); }
-      lastTime[v.__id] = t;
-    });
-  }, 3000);
 });
 </script>
 
