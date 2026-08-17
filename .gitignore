@@ -18,3 +18,6 @@ package-lock.json
 
 # Ignore folders related to IDEs
 .vscode/
+
+# Source GIFs for the lambda-hold page (converted to mp4; not committed)
+images/lambda-hold/assets/

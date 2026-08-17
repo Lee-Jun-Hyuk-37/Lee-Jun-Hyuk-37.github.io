@@ -84,10 +84,13 @@ header:
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Abstract placeholder. Replace this paragraph with a concise summary of the
-            project: the problem it addresses, the key idea, the method, and the main
-            results. Keep it to a short paragraph so visitors can grasp the contribution
-            at a glance.
+            The massive overactuation in the human musculoskeletal system makes it challenging to train musculoskeletal models to generate human-like motion via reinforcement learning, primarily because exploration in the resulting high-dimensional and redundant action space is extremely inefficient.
+            To address this problem, we propose the $\lambda$-hold controller, inspired by the equilibrium-point (EP) hypothesis, which has been widely supported by extensive evidence from human motor control studies.
+            The policy's control variable is the per-muscle EP threshold length $\lambda$, from which a stretch-reflex recruitment law computes the muscle excitations automatically.
+            Holding each $\lambda$ over an interval of the gait phase also sharply reduces the frequency at which the policy must be queried.
+            Consequently, the controller, to our knowledge for the first time, enables a muscle-actuated skeletal model to learn human-like sprinting using only a minimal reward within an hour of training.
+            The efficient exploration through the proposed $\lambda$-hold controller is not merely an engineering trick but an approach grounded in physiology, bringing together the EP hypothesis, intermittent control, and optimal feedback control.
+            Beyond encapsulating human-like behavior in predictive simulation, this achievement contributes to developing a learnable model of the human motor controller.
           </p>
         </div>
       </div>
@@ -101,15 +104,9 @@ header:
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Overview</h2>
-        <div class="content has-text-justified">
-          <p>
-            Overview placeholder. Briefly introduce the Lambda-Hold controller here, then
-            let the figure below carry the core intuition of the method.
-          </p>
-        </div>
         <div style="padding: 6px;"></div>
         <div class="columns is-centered">
-          <div class="placeholder-media" style="width: 90%;">Overview figure placeholder</div>
+          <img src="{{ '/images/lambda-hold/lambda_hold_overview.png' | relative_url }}" alt="Overview of the lambda-hold controller" style="width: 100%; max-width: 960px; height: auto;" />
         </div>
       </div>
     </div>
