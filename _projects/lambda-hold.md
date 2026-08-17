@@ -21,9 +21,9 @@ header:
           </h1>
 
           <div class="publication-authors author-list">
-            <span class="author-block"><a class="author-name" href="{{ '/' | relative_url }}">Jun Hyuk Lee</a> <a class="author-home" href="{{ '/' | relative_url }}" aria-label="Homepage"><i class="fas fa-house"></i></a> <a href="https://orcid.org/0000-0003-3345-5303" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
-            <span class="author-block"><a class="author-name" href="https://27bro.github.io/" target="_blank" rel="noopener noreferrer">Chihyeong Lee</a> <a class="author-home" href="https://27bro.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Homepage"><i class="fas fa-house"></i></a> <a href="https://orcid.org/0009-0002-4335-9825" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
-            <span class="author-block"><a class="author-name" href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a> <a class="author-home" href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer" aria-label="Homepage"><i class="fas fa-house"></i></a> <a href="https://orcid.org/0000-0002-7964-5148" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1,2,3,*</sup></span>
+            <span class="author-block">Jun Hyuk Lee <a class="author-home" href="{{ '/' | relative_url }}" aria-label="Homepage"><i class="fas fa-house"></i></a> <a href="https://orcid.org/0000-0003-3345-5303" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
+            <span class="author-block">Chihyeong Lee <a class="author-home" href="https://27bro.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Homepage"><i class="fas fa-house"></i></a> <a href="https://orcid.org/0009-0002-4335-9825" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1</sup></span>
+            <span class="author-block">Jooeun Ahn <a class="author-home" href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer" aria-label="Homepage"><i class="fas fa-house"></i></a> <a href="https://orcid.org/0000-0002-7964-5148" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid"></i></a><sup>1,2,3,*</sup></span>
           </div>
 
           <div class="publication-authors publication-affiliations">
