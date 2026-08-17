@@ -131,7 +131,11 @@ header:
         <h3 class="title is-4">Lambda-Hold (ours)</h3>
         <div style="padding: 8px;"></div>
         <div class="columns is-centered">
-          <div class="placeholder-media" style="width: 100%;">Result video placeholder</div>
+          <div class="media-frame" style="width: 100%;">
+            <div class="placeholder-media">Result video placeholder</div>
+            <span class="media-label is-good">Ours</span>
+            <div class="media-caption-overlay">Caption overlay example &mdash; this text sits on top of the video and stays fully editable.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -142,7 +146,10 @@ header:
         <h3 class="title is-4">Baseline comparison</h3>
         <div style="padding: 8px;"></div>
         <div class="columns is-centered">
-          <div class="placeholder-media" style="width: 100%;">Baseline video placeholder</div>
+          <div class="media-frame" style="width: 100%;">
+            <div class="placeholder-media">Baseline video placeholder</div>
+            <span class="media-label is-bad">Baseline</span>
+          </div>
         </div>
       </div>
     </div>

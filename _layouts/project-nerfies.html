@@ -61,6 +61,51 @@
       font-size: 0.82em;
       margin-left: 0.18rem;
     }
+    /* Text overlays drawn on top of a video (or figure): corner labels and an
+       optional bottom caption bar. The video itself is never modified. */
+    .media-frame {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      line-height: 0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .media-frame > video,
+    .media-frame > img,
+    .media-frame > .placeholder-media {
+      display: block;
+      width: 100%;
+      border-radius: 0;
+    }
+    .media-label {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      padding: 0.22rem 0.7rem;
+      background: rgba(20, 20, 20, 0.72);
+      color: #fff;
+      border-radius: 6px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .media-label.is-good { background: rgba(33, 110, 60, 0.82); }
+    .media-label.is-bad  { background: rgba(150, 45, 45, 0.82); }
+    .media-caption-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.6rem 0.9rem 0.7rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+      color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.35;
+      text-align: left;
+    }
     /* Neutral stand-in shown wherever a real video/figure will go. */
     .placeholder-media {
       display: flex;
