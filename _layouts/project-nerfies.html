@@ -106,6 +106,66 @@
       line-height: 1.35;
       text-align: left;
     }
+    /* Teaser: several clips of the same motion shown side by side. */
+    .teaser-strip {
+      display: flex;
+      gap: 4px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .teaser-strip video {
+      flex: 1 1 0;
+      min-width: 0;
+      width: 25%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    /* Training-progression comparison grid (method rows x stage columns). */
+    .progress-grid-wrap { overflow-x: auto; }
+    .progress-grid {
+      display: grid;
+      grid-template-columns: max-content repeat(3, 1fr);
+      gap: 0.55rem 0.7rem;
+      align-items: center;
+      min-width: 620px;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    .pg-stage {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #363636;
+      text-align: center;
+    }
+    .pg-method {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #2f2f2f;
+      text-align: right;
+      padding-right: 0.4rem;
+      white-space: nowrap;
+    }
+    .pg-method .pg-ours { color: hsl(204, 86%, 45%); }
+    .pg-cell { line-height: 0; }
+    .pg-cell video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+    }
+    /* Best-baseline pair (two views side by side). */
+    .baseline-duo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+    .baseline-duo .media-frame { flex: 0 1 300px; }
+    .baseline-duo video { display: block; width: 100%; height: auto; }
     /* Neutral stand-in shown wherever a real video/figure will go. */
     .placeholder-media {
       display: flex;
@@ -161,6 +221,26 @@
     </div>
   </div>
 </footer>
+
+<!-- Play only the clips currently on screen; pausing off-screen ones keeps the
+     browser from throttling many simultaneous videos. -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var vids = document.querySelectorAll('video[loop]');
+  if (!vids.length) return;
+  function tryPlay(v) { v.play().catch(function () {}); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { tryPlay(e.target); } else { e.target.pause(); }
+      });
+    }, { threshold: 0.1 });
+    vids.forEach(function (v) { io.observe(v); });
+  } else {
+    vids.forEach(tryPlay);
+  }
+});
+</script>
 
 </body>
 </html>
