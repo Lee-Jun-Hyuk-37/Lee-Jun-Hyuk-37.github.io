@@ -305,16 +305,41 @@ html[data-theme="dark"] .project {
 $proj-thumb-max-width: 360px;
 $proj-thumb-max-height: 200px;
 
-/* Markdownify wraps each excerpt in its own <p>, which the browser splits out
-   of the .archive__item-excerpt paragraph, so target the excerpt image by its
-   position inside the item instead. */
-.archive__item p img {
+/* Tight stacking of title / description / date, with the thumbnail below.
+   Overrides the theme's roomy default margins on the listing items. */
+.projects-list {
+  .archive__item-title {
+    margin: 0 0 0.15em;
+  }
+
+  .archive__item-desc {
+    margin: 0.1em 0 0;
+    font-size: $type-size-5;
+    line-height: 1.5;
+  }
+
+  .archive__item-date {
+    margin: 0.15em 0 0;
+    color: var(--global-text-color-light);
+    font-size: $type-size-6;
+  }
+
+  .archive__item-thumb {
+    margin-top: 0.7em;
+  }
+
+  .list__item {
+    margin-bottom: 2.2em;
+  }
+}
+
+/* Keep every listing thumbnail within one uniform box (never cropped). */
+.archive__item-thumb img {
   display: block;
   width: auto;
   height: auto;
   max-width: $proj-thumb-max-width;
   max-height: $proj-thumb-max-height;
-  margin-top: 0.5em;
 }
 
 /* Four-clip thumbnail strip used inside a project's list excerpt.
