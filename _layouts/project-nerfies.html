@@ -235,6 +235,28 @@
       font-family: 'Google Sans', sans-serif;
       font-size: 1.05rem;
     }
+
+    /* ---- Mobile: keep the comparisons legible ---------------------------- */
+    @media screen and (max-width: 768px) {
+      /* The 5-method grid would squeeze into unreadable thumbnails, so let it
+         scroll sideways at a usable clip size instead. */
+      .progress-grid-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .progress-grid {
+        min-width: 560px;
+        grid-template-columns: 62px repeat(5, 1fr);
+        gap: 0.4rem 0.35rem;
+      }
+      .pg-method { font-size: 0.8rem; }
+      .pg-stage { font-size: 0.78rem; }
+      .pg-corner { font-size: 0.76rem; }
+
+      /* Keep the two views of each method side by side (not stacked huge). */
+      .baseline-compare { gap: 1.4rem 1rem; }
+      .baseline-compare .media-frame { flex: 0 1 140px; }
+    }
   </style>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">

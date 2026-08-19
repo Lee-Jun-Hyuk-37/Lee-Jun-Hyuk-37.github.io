@@ -1,12 +1,12 @@
 ---
 title: "Lambda-Hold Control"
-excerpt: "To be updated.<br/><img src='/images/to-be-updated.png'>"
+excerpt: "Human-like movement emerges from a minimal task reward in predictive musculoskeletal simulation.<br/><img src='/images/lambda-hold/lambda_hold_overview.png'>"
 collection: projects
 category: research
 date: 2026-08-17
 layout: project-nerfies
 header:
-  teaser: /images/to-be-updated.png
+  teaser: /images/lambda-hold/lambda_hold_overview.png
 ---
 
 <!-- ================= HERO / TITLE / AUTHORS ================= -->
@@ -38,9 +38,9 @@ header:
 
           <div class="publication-link-row has-text-centered">
             <div class="publication-links">
-              <!-- arXiv (active; replace # with the arXiv URL once available) -->
+              <!-- arXiv -->
               <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                <a href="https://arxiv.org/abs/2608.17030" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
@@ -216,11 +216,13 @@ header:
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
-    {% raw %}<pre><code>@article{placeholder2026,
-  title   = {Your Project Title Here},
-  author  = {Author One and Author Two and Author Three},
-  journal = {Venue / Conference},
-  year    = {2026}
+    {% raw %}<pre><code>@misc{lee2026lambdahold,
+  title         = {Lambda-Hold Control: Human-Like Movement Emerges from a Minimal Task Reward in Predictive Musculoskeletal Simulation},
+  author        = {Jun Hyuk Lee and Chihyeong Lee and Jooeun Ahn},
+  year          = {2026},
+  eprint        = {2608.17030},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO}
 }
 </code></pre>{% endraw %}
   </div>
