@@ -115,7 +115,8 @@
       max-width: 900px;
       margin: 0 auto;
     }
-    .teaser-strip > * { flex: 1 1 0; min-width: 0; }
+    /* Each clip is a query container so its label can scale with its width. */
+    .teaser-strip > * { flex: 1 1 0; min-width: 0; container-type: inline-size; }
     .teaser-strip video {
       width: 100%;
       height: auto;
@@ -123,11 +124,14 @@
       display: block;
       border-radius: 6px;
     }
+    /* Label sized in container-width units, so it keeps the same proportion of
+       the clip on every screen (matches ~0.8rem at the full desktop size, and
+       shrinks with the clip on small screens). */
     .teaser-strip .media-label {
-      top: 0.4rem;
-      left: 0.4rem;
-      padding: 0.14rem 0.5rem;
-      font-size: 0.8rem;
+      top: 2.9cqw;
+      left: 2.9cqw;
+      padding: 1cqw 3.6cqw;
+      font-size: 5.8cqw;
     }
     /* Training-progression comparison grid (stage rows x method columns). */
     .progress-grid {
