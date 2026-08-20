@@ -1,6 +1,6 @@
 ---
 title: "Lambda-Hold Control"
-excerpt: "Human-like movement emerges from a minimal task reward in predictive musculoskeletal simulation.<br/><img src='/images/lambda-hold/lambda_hold_overview.png'>"
+excerpt: "Human-like movement emerges from a minimal task reward in predictive musculoskeletal simulation. (arXiv preprint)<br/><img src='/images/lambda-hold/lambda_hold_overview.png'>"
 collection: projects
 category: research
 date: 2026-08-17
