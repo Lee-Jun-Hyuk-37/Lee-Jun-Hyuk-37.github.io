@@ -15,7 +15,7 @@ redirect_from:
     <h2 class="home__section-title">About</h2>
     <div class="home__prose">
       <p>I am a master's student in the <a href="https://sports-engineering-lab.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Sports Engineering Lab</a> at Seoul National University, advised by Professor <a href="https://sports-engineering-lab.snu.ac.kr/member/?name=Jooeun%20Ahn" target="_blank" rel="noopener noreferrer">Jooeun Ahn</a>.</p>
-      <p>My research goal is to build a <strong>digital clone of the human motor controller</strong>.</p>
+      <p>My research goal is to build a <strong>digital twin of the human motor controller</strong>.</p>
       <p>Once this becomes possible, it would let us understand the principles of human motor control on a scientific level, and put that understanding to practical use in areas such as surgical support, rehabilitation, performance augmentation, and controller design for exoskeletons or any other system that physically interacts with the human body.</p>
       <p>To get there, I believe a deep understanding of the human body has to come first. Beyond biomechanics, I actively study neuroscience and physiology, drawing on that knowledge and building it on top of state-of-the-art methods. My work ranges from classical mathematical modeling to reinforcement-learning-based musculoskeletal simulation, alongside hands-on biomechanics experiments, and I am also deeply interested in exoskeletons.</p>
     </div>
@@ -27,6 +27,7 @@ redirect_from:
       <span class="home__keyword">Artificial Intelligence</span>
       <span class="home__keyword">Reinforcement Learning</span>
       <span class="home__keyword">Nonlinear Dynamics</span>
+      <span class="home__keyword">Physics-Based Character Control</span>
       <span class="home__keyword">Human Pose Estimation</span>
     </div>
   </section>
@@ -39,6 +40,16 @@ redirect_from:
     </div>
 
     <div class="home__cards">
+
+      <article class="home__card">
+        <img class="home__card-thumb" src="{{ base_path }}/images/lambda-hold/lambda_hold_overview.png" alt="" />
+        <div class="home__card-body">
+          <h3 class="home__card-title">How can human-like movement emerge from a minimal task reward?</h3>
+          <p class="home__card-meta">arXiv preprint</p>
+          <p class="home__card-note">Introduced the &lambda;-hold controller, grounded in the equilibrium-point hypothesis, to learn human-like sprinting from only a minimal reward.</p>
+          <a class="home__card-link" href="{{ base_path }}/projects/lambda-hold/">detail</a>
+        </div>
+      </article>
 
       <article class="home__card">
         <div class="home__card-thumb home__card-thumb--videos">
