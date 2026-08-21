@@ -216,7 +216,8 @@ header:
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
-    {% raw %}<pre><code id="bibtex-code">@misc{lee2026lambdahold,
+    <div class="bibtex-wrap">
+      {% raw %}<pre><code id="bibtex-code">@misc{lee2026lambdahold,
   title         = {{Lambda-Hold Control: Human-Like Movement Emerges from a Minimal Task Reward in Predictive Musculoskeletal Simulation}},
   author        = {Jun Hyuk Lee and Chihyeong Lee and Jooeun Ahn},
   year          = {2026},
@@ -225,6 +226,7 @@ header:
   primaryClass  = {cs.RO}
 }
 </code></pre>{% endraw %}
-    <button type="button" class="bibtex-copy" data-target="bibtex-code">Copy</button>
+      <button type="button" class="bibtex-copy" data-target="bibtex-code">Copy</button>
+    </div>
   </div>
 </section>
