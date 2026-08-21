@@ -240,6 +240,28 @@
       font-size: 1.05rem;
     }
 
+    /* Copy-to-clipboard button under the BibTeX block. */
+    .bibtex-copy {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.34rem 0.95rem;
+      border: 1px solid #d5d5d5;
+      border-radius: 6px;
+      background: #f4f4f4;
+      color: #363636;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+    }
+    .bibtex-copy:hover { background: #ececec; border-color: #c2c2c2; }
+    .bibtex-copy.is-copied {
+      background: rgba(33, 110, 60, 0.12);
+      border-color: rgba(33, 110, 60, 0.5);
+      color: rgb(33, 110, 60);
+    }
+
     /* ---- Mobile: keep the comparisons legible ---------------------------- */
     @media screen and (max-width: 768px) {
       /* The 5-method grid would squeeze into unreadable thumbnails, so let it
@@ -378,6 +400,36 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     vids.forEach(enqueue);
   }
+});
+</script>
+
+<!-- Copy the BibTeX block to the clipboard. -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.bibtex-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = document.getElementById(btn.getAttribute('data-target'));
+      if (!code) return;
+      var text = code.textContent;
+      function flash() {
+        var prev = btn.getAttribute('data-label') || btn.textContent;
+        btn.setAttribute('data-label', prev);
+        btn.textContent = 'Copied!';
+        btn.classList.add('is-copied');
+        setTimeout(function () { btn.textContent = prev; btn.classList.remove('is-copied'); }, 1500);
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); flash();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(flash).catch(fallback);
+      } else { fallback(); }
+    });
+  });
 });
 </script>
 

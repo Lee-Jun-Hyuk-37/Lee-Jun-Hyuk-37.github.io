@@ -216,16 +216,15 @@ header:
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
-    {% raw %}<pre><code>@misc{lee2026lambdahold,
+    {% raw %}<pre><code id="bibtex-code">@misc{lee2026lambdahold,
   title         = {{Lambda-Hold Control: Human-Like Movement Emerges from a Minimal Task Reward in Predictive Musculoskeletal Simulation}},
   author        = {Jun Hyuk Lee and Chihyeong Lee and Jooeun Ahn},
   year          = {2026},
   eprint        = {2608.17030},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.RO},
-  doi           = {10.48550/arXiv.2608.17030},
-  url           = {https://arxiv.org/abs/2608.17030}
+  primaryClass  = {cs.RO}
 }
 </code></pre>{% endraw %}
+    <button type="button" class="bibtex-copy" data-target="bibtex-code">Copy</button>
   </div>
 </section>
