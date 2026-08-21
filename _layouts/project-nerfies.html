@@ -247,22 +247,26 @@
       top: 0.55rem;
       right: 0.55rem;
       z-index: 1;
-      padding: 0.28rem 0.8rem;
-      border: 1px solid #d5d5d5;
+      padding: 0.3rem 0.95rem;
+      border: 1px solid hsl(204, 86%, 42%);
       border-radius: 6px;
-      background: #f4f4f4;
-      color: #363636;
+      background: hsl(204, 86%, 45%);
+      color: #fff;
       font-family: 'Google Sans', sans-serif;
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+      transition: background 120ms ease, box-shadow 120ms ease;
     }
-    .bibtex-copy:hover { background: #ececec; border-color: #c2c2c2; }
+    .bibtex-copy:hover {
+      background: hsl(204, 86%, 39%);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    }
     .bibtex-copy.is-copied {
-      background: rgba(33, 110, 60, 0.12);
-      border-color: rgba(33, 110, 60, 0.5);
-      color: rgb(33, 110, 60);
+      background: rgb(33, 110, 60);
+      border-color: rgb(28, 96, 52);
+      color: #fff;
     }
 
     /* ---- Mobile: keep the comparisons legible ---------------------------- */
